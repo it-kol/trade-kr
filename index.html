@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <link rel="icon" type="image/png" href="https://files.manuscdn.com/user_upload_by_module/session_file/310519663402005199/qOWZlzkGYKQJxogq.png" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>이머시브 번역 × 해외영업/해외마케팅 KOL · 협업 참고 자료</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ===== DESIGN TOKENS (from immersivespec.manus.space) ===== */
+    :root {
+      /* Primitive — Brand */
+      --primitive-pink-50: #FDEDF3;
+      --primitive-pink-200: #FACCDE;
+      --primitive-pink-500: #F294B8;
+      --primitive-pink-600: #EA4C89;
+      --primitive-pink-700: #A9144D;
+      /* Primitive — Neutral */
+      --primitive-neutral-0: #FFFFFF;
+      --primitive-neutral-100: #F7F7F7;
+      --primitive-neutral-200: #E6E6E6;
+      --primitive-neutral-400: #D9D9D9;
+      --primitive-neutral-600: #8A8A8A;
+      --primitive-neutral-950: #333333;
+      /* Primitive — Functional */
+      --primitive-green-50: #E2F5E0;
+      --primitive-green-600: #51C147;
+      --primitive-red-50: #FCEDEE;
+      --primitive-red-600: #E45052;
+      --primitive-cornflower-50: #ECF3FE;
+      --primitive-cornflower-450: #4181F0;
+      --primitive-orange-50: #FFF2E6;
+      --primitive-orange-500: #FF7D00;
+      --primitive-purple-50: #F0EFF8;
+      --primitive-purple-200: #DBDAF3;
+      --primitive-purple-600: #8685D6;
+      --primitive-purple-700: #2A2859;
+      --primitive-violet-50: #F3F0FF;
+      --primitive-violet-500: #7F63FE;
+      --primitive-blue-50: #EFF6F8;
+      --primitive-blue-200: #DAE9F3;
+
+      /* Semantic — Action */
+      --color-action-primary-default: #EA4C89;
+      --color-action-primary-hover: #A9144D;
+      --color-action-primary-bg: #FACCDE;
+      /* Semantic — Border */
+      --color-border-subtle: #E6E6E6;
+      --color-border-default: #D9D9D9;
+      --color-border-brand: #EA4C89;
+      --color-border-gradient: #DAE9F3;
+      /* Semantic — Text */
+      --color-text-primary: #333333;
+      --color-text-secondary: #8A8A8A;
+      --color-text-placeholder: #D9D9D9;
+      /* Semantic — Background */
+      --color-bg-page: #F7F7F7;
+      /* Semantic — Feedback */
+      --color-feedback-success-default: #51C147;
+      --color-feedback-success-bg: #E2F5E0;
+      --color-feedback-error-default: #E45052;
+      --color-feedback-error-bg: #FCEDEE;
+      --color-feedback-info-default: #4181F0;
+      --color-feedback-info-bg: #ECF3FE;
+      /* Semantic — Status */
+      --color-status-processing-default: #FF7D00;
+      --color-status-processing-bg: #FFF2E6;
+      --color-status-editing-default: #7F63FE;
+      --color-status-editing-bg: #F3F0FF;
+      /* Semantic — VIP */
+      --color-vip-default: #8685D6;
+      --color-vip-bg: #F0EFF8;
+      --color-vip-subtle: #DBDAF3;
+      --color-vip-dark: #2A2859;
+      /* Semantic — Gradient */
+      --color-gradient-blue-from: #DAE9F3;
+      --color-gradient-blue-to: #EFF6F8;
+      --color-gradient-brand-from: #F294B8;
+      --color-gradient-brand-to: #EA4C89;
+
+      /* Radius */
+      --radius-button: 8px;
+      --radius-card: 16px;
+      --radius-input: 16px;
+      --radius-badge: 9999px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--color-bg-page);
+      color: var(--color-text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--primitive-neutral-100); }
+    ::-webkit-scrollbar-thumb { background: var(--primitive-neutral-400); border-radius: 3px; }
+
+    /* LAYOUT */
+    .inner { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+    section { padding: 72px 0; }
+
+    /* ===== NAV ===== */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255,255,255,0.95); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--color-border-subtle);
+      height: 56px; display: flex; align-items: center;
+    }
+    .nav-inner { max-width: 960px; margin: 0 auto; padding: 0 24px; width: 100%; display: flex; align-items: center; gap: 16px; }
+    .nav-logo { display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: 15px; color: var(--color-text-primary); }
+    .nav-logo img { width: 26px; height: 26px; border-radius: 6px; }
+    .nav-sep { color: var(--primitive-neutral-400); font-size: 14px; }
+    .nav-page-name { font-size: 13px; font-weight: 600; color: var(--color-action-primary-default); }
+    .nav-links { display: flex; gap: 8px; margin-left: auto; }
+    .nav-links a { font-size: 11.5px; color: var(--color-text-secondary); transition: color 0.15s; white-space: nowrap; }
+    .nav-links a:hover { color: var(--color-action-primary-default); }
+    .nav-cta { margin-left: 8px; padding: 6px 14px; border-radius: var(--radius-button); background: var(--color-action-primary-default); color: white; font-size: 13px; font-weight: 700; cursor: pointer; border: none; white-space: nowrap; transition: background 0.15s; }
+    .nav-cta:hover { background: var(--color-action-primary-hover); }
+    .nav-mobile-btn { display: none; margin-left: auto; background: none; border: none; color: var(--color-text-primary); font-size: 20px; cursor: pointer; }
+
+    /* MOBILE NAV */
+    .mobile-nav { display: none; position: fixed; inset: 0; z-index: 200; background: rgba(255,255,255,0.98); backdrop-filter: blur(20px); flex-direction: column; align-items: center; justify-content: center; gap: 24px; }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { font-size: 20px; font-weight: 700; color: var(--color-text-primary); }
+    .mobile-nav a:hover { color: var(--color-action-primary-default); }
+    .mobile-nav-close { position: absolute; top: 20px; right: 24px; background: none; border: none; color: var(--color-text-secondary); font-size: 28px; cursor: pointer; }
+
+    /* BOTTOM BAR */
+    .bottom-bar {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 90;
+      background: rgba(255,255,255,0.97); backdrop-filter: blur(12px);
+      border-top: 1px solid var(--color-border-subtle);
+      padding: 10px 24px; display: flex; align-items: center; gap: 14px;
+    }
+    .bottom-bar-logo { width: 28px; height: 28px; border-radius: 7px; flex-shrink: 0; }
+    .bottom-bar-text { font-size: 13px; font-weight: 600; color: var(--color-text-primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .bottom-bar-url { font-size: 11px; color: var(--color-action-primary-default); font-family: 'JetBrains Mono', monospace; }
+    .bottom-bar-cta { margin-left: auto; flex-shrink: 0; background: var(--color-action-primary-default); color: white; padding: 7px 16px; border-radius: var(--radius-button); font-size: 13px; font-weight: 700; white-space: nowrap; cursor: pointer; border: none; transition: background 0.15s; }
+    .bottom-bar-cta:hover { background: var(--color-action-primary-hover); }
+
+    /* SIDE BTNS */
+    .side-btns { position: fixed; left: 16px; top: 50%; transform: translateY(-50%); z-index: 80; display: flex; flex-direction: column; gap: 8px; }
+    .side-btn { display: flex; align-items: center; gap: 7px; padding: 8px 12px; border-radius: 10px; background: white; border: 1px solid var(--color-border-default); font-size: 14px; cursor: pointer; transition: all 0.15s; color: var(--color-text-secondary); white-space: nowrap; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+    .side-btn:hover { border-color: var(--color-border-brand); color: var(--color-action-primary-default); box-shadow: 0 2px 8px rgba(234,76,137,0.12); }
+    .side-btn-label { font-size: 12px; font-weight: 600; }
+
+    /* MODAL */
+    .modal-overlay { display: none; position: fixed; inset: 0; z-index: 300; background: rgba(0,0,0,0.35); backdrop-filter: blur(4px); align-items: center; justify-content: center; }
+    .modal-overlay.open { display: flex; }
+    .modal-box { background: white; border: 1px solid var(--color-border-subtle); border-radius: var(--radius-card); padding: 28px; max-width: 460px; width: 90%; position: relative; max-height: 90vh; overflow-y: auto; box-shadow: 0 16px 48px rgba(0,0,0,0.12); }
+    .modal-close { position: absolute; top: 14px; right: 16px; background: none; border: none; color: var(--color-text-secondary); font-size: 22px; cursor: pointer; }
+    .modal-title { font-size: 18px; font-weight: 800; margin-bottom: 6px; color: var(--color-text-primary); }
+    .modal-sub { font-size: 13px; color: var(--color-text-secondary); margin-bottom: 18px; line-height: 1.7; }
+    .wx-card { display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: var(--radius-button); background: var(--primitive-neutral-100); border: 1px solid var(--color-border-subtle); margin-bottom: 8px; }
+    .wx-platform { width: 34px; height: 34px; border-radius: 8px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; overflow: hidden; background: white; border: 1px solid var(--color-border-subtle); }
+    .wx-info { flex: 1; }
+    .wx-name { font-size: 13px; font-weight: 600; color: var(--color-text-primary); }
+    .wx-id { font-size: 12px; color: var(--color-action-primary-default); font-family: 'JetBrains Mono', monospace; margin-top: 1px; }
+    .wx-copy { padding: 5px 11px; border-radius: var(--radius-button); background: white; border: 1px solid var(--color-border-default); font-size: 11px; font-weight: 600; color: var(--color-text-secondary); cursor: pointer; transition: all 0.15s; white-space: nowrap; flex-shrink: 0; }
+    .wx-copy:hover { border-color: var(--color-border-brand); color: var(--color-action-primary-default); }
+    .wx-copy.copied { border-color: var(--color-feedback-success-default); color: var(--color-feedback-success-default); }
+
+    /* SHARE MODAL */
+    .share-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-top: 14px; }
+    .share-item { display: flex; flex-direction: column; align-items: center; gap: 7px; padding: 14px 8px; border-radius: var(--radius-button); background: var(--primitive-neutral-100); border: 1px solid var(--color-border-subtle); cursor: pointer; transition: all 0.15s; }
+    .share-item:hover { border-color: var(--color-border-brand); background: var(--primitive-pink-50); }
+    .share-plat-icon { font-size: 22px; }
+    .share-plat-label { font-size: 11px; color: var(--color-text-secondary); }
+
+    /* REVEAL */
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ===== DEMO SECTION ===== */
+    .demo-bg { background: white; border-top: 1px solid var(--color-border-subtle); border-bottom: 1px solid var(--color-border-subtle); }
+    .demo-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 28px; }
+    .demo-tab { padding: 8px 16px; border-radius: var(--radius-badge); border: 1.5px solid var(--color-border-default); background: white; font-size: 13px; font-weight: 600; color: var(--color-text-secondary); cursor: pointer; transition: all 0.15s; }
+    .demo-tab.active { background: var(--color-action-primary-default); color: white; border-color: var(--color-action-primary-default); }
+    .demo-tab.active-trade { background: var(--color-status-processing-default); color: white; border-color: var(--color-status-processing-default); }
+    .demo-panel { display: none; }
+    .demo-panel.active { display: block; }
+    .demo-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center; }
+    .demo-layout.reverse { direction: rtl; }
+    .demo-layout.reverse > * { direction: ltr; }
+    .demo-img-wrap { border-radius: var(--radius-card); overflow: hidden; border: 1px solid var(--color-border-subtle); box-shadow: 0 8px 32px rgba(0,0,0,0.08); background: var(--primitive-neutral-100); }
+    .demo-img-wrap img { width: 100%; display: block; }
+    .demo-text-wrap { display: flex; flex-direction: column; gap: 16px; }
+    .demo-badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border-radius: var(--radius-badge); font-size: 11px; font-weight: 700; }
+    .demo-badge-trade { background: var(--color-status-processing-bg); color: var(--color-status-processing-default); border: 1px solid #ffd4a8; }
+    .demo-badge-ops { background: var(--primitive-pink-50); color: var(--color-action-primary-default); border: 1px solid var(--primitive-pink-200); }
+    .demo-title { font-size: 22px; font-weight: 900; letter-spacing: -0.02em; line-height: 1.3; color: var(--color-text-primary); }
+    .demo-desc { font-size: 14px; color: var(--color-text-secondary); line-height: 1.8; }
+    .demo-points { display: flex; flex-direction: column; gap: 8px; }
+    .demo-point { display: flex; align-items: flex-start; gap: 8px; font-size: 13px; color: var(--color-text-primary); }
+    .demo-point-icon { width: 20px; height: 20px; border-radius: 50%; background: var(--color-feedback-success-bg); color: var(--color-feedback-success-default); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    @media (max-width: 680px) { .demo-layout { grid-template-columns: 1fr; } .demo-layout.reverse { direction: ltr; } }
+
+    /* ===== TESTIMONIALS ===== */
+    .testimonials-bg { background: linear-gradient(160deg, var(--primitive-pink-50) 0%, white 60%); }
+   .testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.testi-scroll-track {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border-default) transparent;
+  padding-bottom: 8px;
+}
+.testi-scroll-track::-webkit-scrollbar { height: 4px; }
+.testi-scroll-track::-webkit-scrollbar-track { background: transparent; }
+.testi-scroll-track::-webkit-scrollbar-thumb { background: var(--color-border-default); border-radius: 2px; }
+.testi-scroll-inner {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  padding: 4px 2px;
+}
+.testi-scroll-inner .testi-card {
+  width: 300px;
+  flex-shrink: 0;
+}
+.enterprise-simple-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  background: linear-gradient(135deg, var(--primitive-purple-50) 0%, var(--primitive-pink-50) 100%);
+  border: 1px solid var(--primitive-purple-200);
+  border-radius: var(--radius-card);
+  padding: 32px 40px;
+}
+.enterprise-simple-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  flex: 1;
+}
+.enterprise-simple-icon {
+  font-size: 36px;
+  flex-shrink: 0;
+}
+.enterprise-simple-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 8px;
+}
+.enterprise-simple-desc {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+.enterprise-simple-right {
+  flex-shrink: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+@media (max-width: 768px) {
+  .enterprise-simple-card { flex-direction: column; padding: 24px; }
+  .enterprise-simple-right { width: 100%; }
+}
+    .testi-card { background: white; border: 1px solid var(--color-border-subtle); border-radius: var(--radius-card); padding: 22px; display: flex; flex-direction: column; gap: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.04); transition: box-shadow 0.2s, transform 0.2s; }
+    .testi-card:hover { box-shadow: 0 8px 28px rgba(0,0,0,0.09); transform: translateY(-2px); }
+    .testi-stars { color: #FBBF24; font-size: 14px; letter-spacing: 1px; }
+    .testi-quote { font-size: 14px; color: var(--color-text-primary); line-height: 1.75; flex: 1; position: relative; }
+    .testi-quote::before { content: '\201C'; font-size: 40px; color: var(--primitive-pink-200); line-height: 0; vertical-align: -14px; margin-right: 2px; font-family: Georgia, serif; }
+    .testi-author { display: flex; align-items: center; gap: 10px; padding-top: 12px; border-top: 1px solid var(--color-border-subtle); }
+    .testi-avatar { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+    .testi-name { font-size: 13px; font-weight: 700; color: var(--color-text-primary); }
+    .testi-role { font-size: 11px; color: var(--color-text-secondary); margin-top: 1px; }
+    .testi-plat { display: inline-block; padding: 2px 8px; border-radius: var(--radius-badge); font-size: 10px; font-weight: 600; margin-top: 3px; }
+    @media (max-width: 768px) { .testimonials-grid { grid-template-columns: 1fr; } }
+    @media (min-width: 480px) and (max-width: 768px) { .testimonials-grid { grid-template-columns: 1fr 1fr; } }
+
+    /* ===== ENTERPRISE ===== */
+    .enterprise-bg { background: var(--color-bg-page); }
+    .enterprise-card { background: white; border: 1.5px solid var(--color-border-default); border-radius: var(--radius-card); overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
+    .enterprise-card-top { background: linear-gradient(135deg, var(--primitive-purple-700) 0%, var(--primitive-violet-500) 100%); padding: 36px 40px; color: white; display: flex; align-items: center; gap: 24px; }
+    .enterprise-icon { width: 64px; height: 64px; border-radius: 16px; background: rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; font-size: 32px; flex-shrink: 0; }
+    .enterprise-top-title { font-size: 24px; font-weight: 900; letter-spacing: -0.02em; margin-bottom: 6px; }
+    .enterprise-top-sub { font-size: 14px; opacity: 0.85; line-height: 1.6; }
+    .enterprise-card-body { padding: 32px 40px; }
+    .enterprise-perks { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 28px; }
+    .enterprise-perk { display: flex; flex-direction: column; gap: 6px; padding: 16px; border-radius: var(--radius-button); background: var(--primitive-neutral-100); border: 1px solid var(--color-border-subtle); }
+    .enterprise-perk-icon { font-size: 22px; }
+    .enterprise-perk-title { font-size: 13px; font-weight: 700; color: var(--color-text-primary); }
+    .enterprise-perk-desc { font-size: 12px; color: var(--color-text-secondary); line-height: 1.6; }
+    .enterprise-cta-row { display: flex; align-items: center; gap: 16px; padding: 20px 24px; background: linear-gradient(135deg, var(--primitive-violet-50) 0%, var(--primitive-purple-50) 100%); border-radius: var(--radius-button); border: 1px solid var(--primitive-purple-200); }
+    .enterprise-cta-text { flex: 1; }
+    .enterprise-cta-title { font-size: 15px; font-weight: 800; color: var(--primitive-purple-700); margin-bottom: 3px; }
+    .enterprise-cta-sub { font-size: 13px; color: var(--color-text-secondary); }
+    .enterprise-cta-btn { padding: 10px 22px; border-radius: var(--radius-button); background: linear-gradient(135deg, var(--primitive-purple-700) 0%, var(--primitive-violet-500) 100%); color: white; font-size: 14px; font-weight: 700; border: none; cursor: pointer; white-space: nowrap; transition: opacity 0.15s; flex-shrink: 0; }
+    .enterprise-cta-btn:hover { opacity: 0.88; }
+    @media (max-width: 680px) { .enterprise-card-top { flex-direction: column; padding: 24px; } .enterprise-card-body { padding: 24px; } .enterprise-perks { grid-template-columns: 1fr 1fr; } .enterprise-cta-row { flex-direction: column; align-items: flex-start; } }
+
+    /* ANIMATIONS */
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+    @keyframes gradShift { 0%,100%{background-position:0% 50%;} 50%{background-position:100% 50%;} }
+    @keyframes marquee { 0%{transform:translateX(0);} 100%{transform:translateX(-50%);} }
+    @keyframes float { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-6px);} }
+
+    /* SECTION HEADER */
+    .sec-head { text-align: center; margin-bottom: 44px; }
+    .sec-label { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-action-primary-default); margin-bottom: 10px; background: var(--primitive-pink-50); padding: 4px 12px; border-radius: var(--radius-badge); border: 1px solid var(--primitive-pink-200); }
+    .sec-title { font-size: clamp(22px, 3vw, 34px); font-weight: 900; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 12px; color: var(--color-text-primary); }
+    .sec-desc { font-size: 15px; color: var(--color-text-secondary); max-width: 580px; margin: 0 auto; line-height: 1.8; }
+
+    /* BUTTONS */
+    .btn { display: inline-flex; align-items: center; gap: 7px; padding: 10px 20px; border-radius: var(--radius-button); font-size: 14px; font-weight: 700; cursor: pointer; transition: all 0.15s; border: none; }
+    .btn-lg { padding: 12px 24px; font-size: 15px; }
+    .btn-primary { background: var(--color-action-primary-default); color: white; }
+    .btn-primary:hover { background: var(--color-action-primary-hover); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(234,76,137,0.25); }
+    .btn-outline { background: white; color: var(--color-action-primary-default); border: 1.5px solid var(--color-border-brand); }
+    .btn-outline:hover { background: var(--primitive-pink-50); }
+    .btn-ghost { background: white; color: var(--color-text-secondary); border: 1px solid var(--color-border-default); }
+    .btn-ghost:hover { border-color: var(--color-border-default); color: var(--color-text-primary); background: var(--primitive-neutral-100); }
+
+    /* TAGS */
+    .tag { padding: 3px 10px; border-radius: var(--radius-badge); font-size: 11px; font-weight: 600; }
+    .tag-brand { background: var(--primitive-pink-50); color: var(--color-action-primary-default); border: 1px solid var(--primitive-pink-200); }
+    .tag-green { background: var(--color-feedback-success-bg); color: var(--color-feedback-success-default); border: 1px solid #b8e8b5; }
+    .tag-blue { background: var(--color-feedback-info-bg); color: var(--color-feedback-info-default); border: 1px solid #b8d4f8; }
+    .tag-orange { background: var(--color-status-processing-bg); color: var(--color-status-processing-default); border: 1px solid #ffd4a8; }
+    .tag-purple { background: var(--color-vip-bg); color: var(--color-vip-default); border: 1px solid var(--color-vip-subtle); }
+    .tag-violet { background: var(--color-status-editing-bg); color: var(--color-status-editing-default); border: 1px solid #c8bffd; }
+    .tag-neutral { background: var(--primitive-neutral-100); color: var(--color-text-secondary); border: 1px solid var(--color-border-subtle); }
+
+    /* BADGE (free/pro) */
+    .badge-free { padding: 2px 8px; border-radius: var(--radius-badge); font-size: 10px; font-weight: 700; background: var(--color-feedback-success-bg); color: var(--color-feedback-success-default); border: 1px solid #b8e8b5; }
+    .badge-pro { padding: 2px 8px; border-radius: var(--radius-badge); font-size: 10px; font-weight: 700; background: var(--color-vip-bg); color: var(--color-vip-default); border: 1px solid var(--color-vip-subtle); }
+
+    /* ===== HERO ===== */
+    .hero-bg {
+      min-height: 100vh; display: flex; align-items: center; justify-content: center;
+      text-align: center; padding-top: 80px; padding-bottom: 48px;
+      background: linear-gradient(160deg, var(--primitive-pink-50) 0%, white 40%, var(--primitive-blue-50) 100%);
+      position: relative; overflow: hidden;
+    }
+    .hero-deco-1 { position: absolute; top: -80px; right: -80px; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(234,76,137,0.07) 0%, transparent 70%); pointer-events: none; }
+    .hero-deco-2 { position: absolute; bottom: -60px; left: -60px; width: 320px; height: 320px; border-radius: 50%; background: radial-gradient(circle, rgba(65,129,240,0.06) 0%, transparent 70%); pointer-events: none; }
+    .hero-inner { max-width: 800px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+    .hero-logo-row { display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 24px; animation: fadeInUp 0.5s ease both; }
+    .hero-logo-img { width: 56px; height: 56px; border-radius: 14px; border: 1px solid var(--color-border-subtle); box-shadow: 0 4px 16px rgba(234,76,137,0.15); animation: float 4s ease infinite; }
+    .hero-x { font-size: 22px; color: var(--primitive-neutral-400); font-weight: 300; }
+    .hero-platform-badge { display: flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 12px; background: white; border: 1px solid var(--color-border-subtle); font-size: 14px; font-weight: 700; color: var(--color-text-primary); box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 5px 14px; border-radius: var(--radius-badge); background: var(--primitive-pink-50); border: 1px solid var(--primitive-pink-200); font-size: 12px; font-weight: 600; color: var(--color-action-primary-default); margin-bottom: 20px; animation: fadeInUp 0.5s ease 0.1s both; }
+    .live-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--color-action-primary-default); animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+    .hero-h1 { font-size: clamp(26px, 4.5vw, 50px); font-weight: 900; line-height: 1.1; letter-spacing: -0.04em; margin-bottom: 18px; animation: fadeInUp 0.5s ease 0.15s both; color: var(--color-text-primary); }
+    .grad-brand { background: linear-gradient(135deg, var(--color-gradient-brand-from), var(--color-gradient-brand-to)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero-sub { font-size: 16px; color: var(--color-text-secondary); line-height: 1.8; margin-bottom: 32px; animation: fadeInUp 0.5s ease 0.2s both; max-width: 600px; margin-left: auto; margin-right: auto; }
+    .hero-actions { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; animation: fadeInUp 0.5s ease 0.25s both; margin-bottom: 28px; }
+    .hero-tracks { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; animation: fadeInUp 0.5s ease 0.28s both; margin-bottom: 10px; }
+    .track-chip { display: flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: var(--radius-badge); font-size: 12px; font-weight: 700; border: 1px solid; }
+    .track-trade { background: var(--color-status-processing-bg); border-color: #ffd4a8; color: var(--color-status-processing-default); }
+    .track-ops { background: var(--primitive-pink-50); border-color: var(--primitive-pink-200); color: var(--color-action-primary-default); }
+    .hero-chips { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; animation: fadeInUp 0.5s ease 0.3s both; }
+    .hero-chip { padding: 4px 10px; border-radius: var(--radius-badge); background: white; border: 1px solid var(--color-border-subtle); font-size: 12px; color: var(--color-text-secondary); font-weight: 500; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+    .hero-stats { display: flex; gap: 0; justify-content: center; flex-wrap: wrap; margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--color-border-subtle); animation: fadeInUp 0.5s ease 0.34s both; }
+    .stat { text-align: center; padding: 0 28px; border-right: 1px solid var(--color-border-subtle); }
+    .stat:last-child { border-right: none; }
+    .stat-n { font-size: 24px; font-weight: 900; color: var(--color-text-primary); letter-spacing: -0.03em; }
+    .stat-n em { color: var(--color-action-primary-default); font-style: normal; }
+    .stat-l { font-size: 12px; color: var(--color-text-secondary); margin-top: 2px; }
+
+    /* MARQUEE */
+    .marquee-wrap { overflow: hidden; padding: 14px 0; border-top: 1px solid var(--color-border-subtle); border-bottom: 1px solid var(--color-border-subtle); background: white; }
+    .marquee-track { display: flex; gap: 0; width: max-content; animation: marquee 28s linear infinite; }
+    .marquee-item { display: flex; align-items: center; gap: 8px; padding: 0 24px; font-size: 13px; font-weight: 600; color: var(--color-text-secondary); white-space: nowrap; }
+    .marquee-sep { color: var(--color-border-default); }
+
+    /* ===== BRIEF ===== */
+    .brief-bg { background: white; border-top: 1px solid var(--color-border-subtle); border-bottom: 1px solid var(--color-border-subtle); }
+    .brief-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-items: stretch; }
+    @media (max-width: 600px) { .brief-grid { grid-template-columns: 1fr; } }
+    .brief-card { background: var(--primitive-neutral-100); border: 1px solid var(--color-border-subtle); border-radius: var(--radius-card); padding: 20px; transition: border-color 0.15s, box-shadow 0.15s; display: flex; flex-direction: column; }
+    .brief-card:hover { border-color: var(--color-border-default); box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
+    .brief-card-head { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+    .brief-card-icon { width: 34px; height: 34px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 17px; flex-shrink: 0; }
+    .brief-card-title { font-size: 14px; font-weight: 800; color: var(--color-text-primary); }
+    .brief-card-sub { font-size: 11px; color: var(--color-text-secondary); margin-top: 1px; }
+    .brief-card-body { font-size: 13px; color: var(--color-text-secondary); line-height: 1.7; }
+    .brief-card-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 10px; }
+    .key-info-box { margin-top: 20px; padding: 22px; background: var(--primitive-pink-50); border: 1px solid var(--primitive-pink-200); border-radius: var(--radius-card); border-left: 3px solid var(--color-action-primary-default); }
+    .key-info-label { font-size: 11px; font-weight: 800; color: var(--color-action-primary-default); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 14px; }
+    .key-info-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    @media (max-width: 768px) { .key-info-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 480px) { .key-info-grid { grid-template-columns: 1fr; } }
+    .key-info-item { display: flex; gap: 10px; align-items: flex-start; }
+    .key-info-num { font-size: 16px; font-weight: 900; color: var(--color-action-primary-default); flex-shrink: 0; line-height: 1.4; }
+    .key-info-text { font-size: 13px; color: var(--color-text-secondary); line-height: 1.6; }
+    .key-info-text strong { color: var(--color-text-primary); }
+    /* ===== WORKFLOW ===== */
+    .workflow-bg { background: var(--primitive-neutral-100); }
+    /* All phase-features use 4 cols — override for tablet */
+    .track-selector { display: flex; gap: 0; margin-bottom: 32px; border-radius: var(--radius-card); overflow: hidden; border: 1px solid var(--color-border-subtle); background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+    .track-btn { flex: 1; padding: 16px 20px; font-size: 14px; font-weight: 700; cursor: pointer; transition: all 0.15s; background: white; border: none; color: var(--color-text-secondary); display: flex; align-items: center; gap: 10px; }
+    .track-btn:first-child { border-right: 1px solid var(--color-border-subtle); }
+    .track-btn.active-trade { background: var(--color-status-processing-bg); color: var(--color-status-processing-default); }
+    .track-btn.active-ops { background: var(--primitive-pink-50); color: var(--color-action-primary-default); }
+    .track-icon { font-size: 22px; }
+    .track-panel { display: none; }
+    .track-panel.active { display: block; }
+    .track-notice { margin-bottom: 20px; padding: 12px 16px; border-radius: var(--radius-button); font-size: 13px; color: var(--color-text-secondary); line-height: 1.7; }
+    .track-notice-trade { background: var(--color-status-processing-bg); border: 1px solid #ffd4a8; }
+    .track-notice-ops { background: var(--primitive-pink-50); border: 1px solid var(--primitive-pink-200); }
+
+    /* PHASE TABS */
+    .phase-tabs { display: flex; gap: 6px; flex-wrap: wrap; justify-content: center; margin-bottom: 28px; }
+    .phase-tab { padding: 6px 14px; border-radius: var(--radius-badge); font-size: 13px; font-weight: 600; background: white; border: 1px solid var(--color-border-default); color: var(--color-text-secondary); cursor: pointer; transition: all 0.15s; }
+    .phase-tab.active-trade { background: var(--color-status-processing-bg); border-color: #ffd4a8; color: var(--color-status-processing-default); }
+    .phase-tab.active-ops { background: var(--primitive-pink-50); border-color: var(--primitive-pink-200); color: var(--color-action-primary-default); }
+    .phase-panel { display: none; }
+    .phase-panel.active { display: block; }
+
+    /* PHASE HEADER */
+    .phase-header { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 20px; padding: 20px; background: white; border: 1px solid var(--color-border-subtle); border-radius: var(--radius-card); box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+    .phase-num { width: 42px; height: 42px; border-radius: 10px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 900; font-family: 'JetBrains Mono', monospace; }
+    .phase-num-trade { background: var(--color-status-processing-bg); color: var(--color-status-processing-default); border: 1px solid #ffd4a8; }
+    .phase-num-ops { background: var(--primitive-pink-50); color: var(--color-action-primary-default); border: 1px solid var(--primitive-pink-200); }
+    .phase-title { font-size: 17px; font-weight: 900; color: var(--color-text-primary); margin-bottom: 5px; }
+    .phase-desc { font-size: 13px; color: var(--color-text-secondary); line-height: 1.7; }
+    .phase-features { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    @media (max-width: 640px) { .phase-features { grid-template-columns: 1fr; } }
+    .feat-card { background: white; border: 1px solid var(--color-border-subtle); border-radius: var(--radius-card); padding: 18px 18px 16px; transition: border-color 0.15s, box-shadow 0.15s; display: flex; flex-direction: column; min-height: 160px; position: relative; }
+    .feat-card:hover { border-color: var(--color-border-default); box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
+    /* Badge as corner tag — top-right absolute */
+    .feat-card .badge-free,
+    .feat-card .badge-pro { position: absolute; top: 12px; right: 12px; }
+    .feat-card-head { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; padding-right: 44px; }
+    .feat-card-icon { font-size: 18px; flex-shrink: 0; }
+    .feat-card-name { font-size: 14px; font-weight: 700; color: var(--color-text-primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .feat-card-body { font-size: 13px; color: var(--color-text-secondary); line-height: 1.7; flex: 1; margin-bottom: 12px; }
+    .feat-card-tip { padding: 8px 11px; border-radius: var(--radius-button); background: var(--primitive-neutral-100); border-left: 2px solid var(--color-border-default); font-size: 12px; color: var(--color-text-secondary); line-height: 1.6; margin-top: auto; flex-shrink: 0; }
+    .feat-card-tip strong { color: var(--color-text-primary); }
+    .feat-card-tip.tip-trade { background: var(--color-status-processing-bg); border-left-color: var(--color-status-processing-default); }
+    .feat-card-tip.tip-trade strong { color: var(--color-status-processing-default); }
+    .feat-card-tip.tip-ops { background: var(--primitive-pink-50); border-left-color: var(--color-action-primary-default); }
+    .feat-card-tip.tip-ops strong { color: var(--color-action-primary-default); }
+
+    /* ===== GUIDE ===== */
+    .guide-bg { background: white; border-top: 1px solid var(--color-border-subtle); border-bottom: 1px solid var(--color-border-subtle); }
+    .guide-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media (max-width: 640px) { .guide-grid { grid-template-columns: 1fr; } }
+    .guide-card { background: var(--primitive-neutral-100); border: 1px solid var(--color-border-subtle); border-radius: var(--radius-card); padding: 20px; display: flex; flex-direction: column; }
+    .guide-card-label { font-size: 10px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px; }
+    .guide-card-title { font-size: 14px; font-weight: 800; color: var(--color-text-primary); margin-bottom: 12px; }
+    .guide-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .guide-list li { display: flex; gap: 8px; font-size: 13px; color: var(--color-text-secondary); line-height: 1.6; }
+    .guide-list li::before { content: '›'; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .guide-list.trade li::before { color: var(--color-status-processing-default); }
+    .guide-list.ops li::before { color: var(--color-action-primary-default); }
+    .must-box { margin-top: 18px; background: var(--primitive-pink-50); border: 1px solid var(--primitive-pink-200); border-radius: var(--radius-card); padding: 20px; }
+    .must-box-title { font-size: 11px; font-weight: 800; color: var(--color-action-primary-default); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 12px; }
+    .must-item { display: flex; align-items: flex-start; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--primitive-pink-200); }
+    .must-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .must-icon { font-size: 15px; flex-shrink: 0; margin-top: 1px; }
+    .must-text { font-size: 13px; color: var(--color-text-secondary); line-height: 1.6; }
+    .must-text strong { color: var(--color-text-primary); }
+
+    /* ===== INSTALL ===== */
+    .install-bg { background: var(--color-bg-page); }
+    .install-tabs { display: flex; gap: 6px; margin-bottom: 20px; flex-wrap: wrap; }
+    .install-tab { padding: 6px 14px; border-radius: var(--radius-badge); font-size: 13px; font-weight: 600; background: white; border: 1px solid var(--color-border-default); color: var(--color-text-secondary); cursor: pointer; transition: all 0.15s; }
+    .install-tab.active { background: var(--primitive-pink-50); border-color: var(--primitive-pink-200); color: var(--color-action-primary-default); }
+    .install-panel { display: none; }
+    .install-panel.active { display: block; }
+    .install-steps { display: flex; flex-direction: column; gap: 10px; }
+    .install-step { display: flex; gap: 14px; align-items: flex-start; padding: 16px; background: white; border: 1px solid var(--color-border-subtle); border-radius: var(--radius-card); }
+    .install-step-num { width: 26px; height: 26px; border-radius: var(--radius-button); background: var(--primitive-pink-50); border: 1px solid var(--primitive-pink-200); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; color: var(--color-action-primary-default); flex-shrink: 0; font-family: 'JetBrains Mono', monospace; }
+    .install-step-body { flex: 1; }
+    .install-step-title { font-size: 14px; font-weight: 700; color: var(--color-text-primary); margin-bottom: 3px; }
+    .install-step-desc { font-size: 13px; color: var(--color-text-secondary); line-height: 1.6; }
+    .install-step-link { display: inline-flex; align-items: center; gap: 5px; margin-top: 7px; padding: 4px 10px; border-radius: var(--radius-button); background: var(--primitive-pink-50); border: 1px solid var(--primitive-pink-200); font-size: 12px; font-weight: 600; color: var(--color-action-primary-default); }
+
+    /* ===== COLLAB FLOW ===== */
+    .collab-bg { background: white; border-top: 1px solid var(--color-border-subtle); border-bottom: 1px solid var(--color-border-subtle); }
+    .flow-steps { display: flex; flex-direction: column; gap: 0; }
+    .flow-step { display: flex; gap: 18px; }
+    .flow-step-left { display: flex; flex-direction: column; align-items: center; width: 44px; flex-shrink: 0; }
+    .flow-step-num { width: 36px; height: 36px; border-radius: 10px; background: var(--primitive-pink-50); border: 1px solid var(--primitive-pink-200); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 900; color: var(--color-action-primary-default); font-family: 'JetBrains Mono', monospace; flex-shrink: 0; }
+    .flow-step-line { width: 1px; flex: 1; background: var(--color-border-subtle); margin: 6px 0; min-height: 18px; }
+    .flow-step:last-child .flow-step-line { display: none; }
+    .flow-step-right { flex: 1; padding-bottom: 28px; }
+    .flow-step-tag { display: inline-block; padding: 3px 9px; border-radius: var(--radius-badge); font-size: 11px; font-weight: 700; margin-bottom: 7px; }
+    .flow-step-title { font-size: 15px; font-weight: 800; color: var(--color-text-primary); margin-bottom: 5px; }
+    .flow-step-desc { font-size: 13px; color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 10px; }
+    .flow-step-items { display: flex; flex-wrap: wrap; gap: 7px; }
+    .flow-item { padding: 4px 10px; border-radius: var(--radius-badge); font-size: 12px; font-weight: 600; color: var(--color-text-secondary); background: var(--primitive-neutral-100); border: 1px solid var(--color-border-subtle); }
+    .benefit-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+    @media (max-width: 480px) { .benefit-cards { grid-template-columns: 1fr; } }
+    .benefit-card { padding: 14px; border-radius: var(--radius-button); border: 1px solid var(--color-border-subtle); background: var(--primitive-neutral-100); }
+    .benefit-card-label { font-size: 10px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 5px; }
+    .benefit-card-title { font-size: 13px; font-weight: 700; color: var(--color-text-primary); margin-bottom: 3px; }
+    .benefit-card-desc { font-size: 12px; color: var(--color-text-secondary); line-height: 1.6; }
+
+    /* ===== CONTACT ===== */
+    .contact-bg { background: var(--color-bg-page); }
+    .contact-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+    @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 480px) { .contact-grid { grid-template-columns: 1fr; } }
+
+    /* ===== FOOTER ===== */
+    footer { padding: 36px 0 80px; text-align: center; border-top: 1px solid var(--color-border-subtle); background: white; }
+    .footer-logo-row { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 6px; }
+    .footer-logo-img { width: 22px; height: 22px; border-radius: 5px; }
+    .footer-name { font-size: 14px; font-weight: 800; color: var(--color-text-primary); }
+    .footer-desc { font-size: 12px; color: var(--color-text-secondary); }
+    .footer-links { margin-top: 14px; display: flex; justify-content: center; gap: 18px; flex-wrap: wrap; }
+    .footer-links a { font-size: 12px; color: var(--color-text-secondary); transition: color 0.15s; }
+    .footer-links a:hover { color: var(--color-action-primary-default); }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none; }
+      .nav-mobile-btn { display: block; }
+      .side-btns { display: none; }
+      .hero-stats .stat { padding: 0 16px; }
+    }
+    @media (max-width: 480px) {
+      .phase-features { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .hero-h1 { font-size: 24px; }
+      .hero-logo-img { width: 44px; height: 44px; }
+      .hero-stats { flex-wrap: wrap; gap: 16px; }
+      .hero-stats .stat { border-right: none; }
+      .track-btn { font-size: 13px; padding: 12px 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663402005199/AdlZOKmKnlgVUZuk.jpg" alt="이머시브 번역" />
+      이머시브 번역
+    </div>
+    <span class="nav-sep">×</span>
+    <span class="nav-page-name">해외영업/해외마케팅 KOL</span>
+    <div class="nav-links">
+      <a href="#brief">제품 브리프</a>
+      <a href="#workflow">업무 시나리오</a>
+      <a href="#demo">기능 데모</a>
+      <a href="#guide">제작 가이드</a>
+      <a href="#install">설치 가이드</a>
+      <a href="#collab">협업 프로세스</a>
+      <a href="#contact">문의하기</a>
+    </div>
+    <button class="nav-cta" onclick="openModal('collabModal')">협업 문의하기</button>
+    <button class="nav-mobile-btn" onclick="openMobileNav()">☰</button>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" onclick="closeMobileNav()">×</button>
+  <a href="#brief" onclick="closeMobileNav()">제품 브리프</a>
+  <a href="#workflow" onclick="closeMobileNav()">업무 시나리오</a>
+  <a href="#demo" onclick="closeMobileNav()">기능 데모</a>
+  <a href="#guide" onclick="closeMobileNav()">제작 가이드</a>
+  <a href="#install" onclick="closeMobileNav()">설치 가이드</a>
+  <a href="#collab" onclick="closeMobileNav()">협업 프로세스</a>
+  <a href="#contact" onclick="closeMobileNav()">문의하기</a>
+  <button class="btn btn-primary" onclick="closeMobileNav();openModal('collabModal')">🤝 협업 문의하기</button>
+</div>
+
+<!-- BOTTOM BAR -->
+<div class="bottom-bar">
+  <img class="bottom-bar-logo" src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663402005199/AdlZOKmKnlgVUZuk.jpg" alt="" />
+  <div>
+    <div class="bottom-bar-text">이머시브 번역 × 해외영업/해외마케팅 KOL 협업 자료 &nbsp;<span style="font-size:11px;color:var(--color-action-primary-default);font-weight:600">💡 영상 설명/댓글에 랜딩 페이지 링크와 명확한 CTA(예: "링크 클릭하고 무료 설치")를 꼭 넣어주세요. 전환율 차이가 큽니다!</span></div>
+    <div class="bottom-bar-url">it-kol.github.io/trade/</div>
+  </div>
+  <button class="bottom-bar-cta" onclick="openModal('collabModal')">협업 문의하기 →</button>
+</div>
+
+<!-- SIDE BTNS -->
+<div class="side-btns">
+  <button class="side-btn" onclick="openModal('shareModal')"><span>🔗</span><span class="side-btn-label">공유하기</span></button>
+  <button class="side-btn" onclick="openModal('collabModal')"><span>🤝</span><span class="side-btn-label">협업 문의하기</span></button>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero-bg" id="hero">
+  <div class="hero-deco-1"></div>
+  <div class="hero-deco-2"></div>
+  <div class="hero-inner">
+    <div class="hero-logo-row">
+      <img class="hero-logo-img" src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663402005199/AdlZOKmKnlgVUZuk.jpg" alt="이머시브 번역" />
+      <span class="hero-x">×</span>
+      <div class="hero-platform-badge"><span style="font-size:20px">🌏</span><span>해외영업 / 해외마케팅 KOL</span></div>
+    </div>
+    <div class="hero-eyebrow"><div class="live-dot"></div>글로벌 셀러 · 해외영업 담당자 · 글로벌 브랜드 · 인플루언서 마케터 · 크리에이터 협업 참고 자료</div>
+    <h1 class="hero-h1">글로벌 비즈니스인의 <span class="grad-brand">언어 효율</span> 툴<br>바이어 협상, 인플루언서 협업, 언어 장벽 없이 완벽하게</h1>
+    <p class="hero-sub">전 세계 2,000만 명 이상이 사용하는 AI 번역 브라우저 플러그인 — 해외영업 담당자는 바이어 협상·계약서 검토에, 해외마케팅 담당자는 인플루언서 발굴·컨택 이메일·CS 처리에 활용합니다. 플러그인 하나로 글로벌 비즈니스 전 과정을 커버하세요.</p>
+    <div class="hero-actions">
+      <a href="#workflow" class="btn btn-primary btn-lg">업무 시나리오 보기</a>
+      <a href="#guide" class="btn btn-outline btn-lg">제작 가이드 보기</a>
+      <a href="https://immersivetranslate.com/ko/" target="_blank" class="btn btn-ghost btn-lg">🌐 공식 홈페이지 ↗</a>
+    </div>
+    <div class="hero-tracks">
+      <div class="track-chip track-trade">📦 해외영업 · 무역 담당자 · 글로벌 셀러</div>
+      <div class="track-chip track-ops">🎬 해외마케팅 · 인플루언서 마케터 · 글로벌 브랜드</div>
+    </div>
+    <div class="hero-chips" style="margin-top:10px;">
+      <span class="hero-chip">🌐 웹페이지 이중언어 번역</span>
+      <span class="hero-chip">✉️ 이메일 AI 어시스턴트</span>
+      <span class="hero-chip">📄 BabelDOC 문서 번역</span>
+      <span class="hero-chip">⚖️ AI 법률 전문가</span>
+      <span class="hero-chip">🎬 영상 이중언어 자막</span>
+      <span class="hero-chip">⌨️ 입력창 번역</span>
+      <span class="hero-chip">🎨 커스텀 프롬프트</span>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-n"><em>2,000</em>만+</div><div class="stat-l">글로벌 유저</div></div>
+      <div class="stat"><div class="stat-n"><em>100</em>+</div><div class="stat-l">지원 언어</div></div>
+      <div class="stat"><div class="stat-n"><em>20</em>+</div><div class="stat-l">AI 번역 엔진</div></div>
+      <div class="stat"><div class="stat-n">2024</div><div class="stat-l">Chrome 올해의 확장프로그램</div></div>
+      <div class="stat"><div class="stat-n"><em>2</em>가지 직무</div><div class="stat-l">영업 + 마케팅 완벽 커버</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span class="marquee-item">📦 글로벌 셀러</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">🤝 바이어 협상</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">📄 계약서 번역</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">⚖️ AI 법률 전문가</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">✉️ 비즈니스 이메일</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">🎵 TikTok 인플루언서</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">📺 YouTube 인플루언서</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">🎧 CS 툴 번역</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">📋 견적서 번역</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">🌐 웹페이지 이중언어</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">📦 글로벌 셀러</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">🤝 바이어 협상</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">📄 계약서 번역</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">⚖️ AI 법률 전문가</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">✉️ 비즈니스 이메일</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">🎵 TikTok 인플루언서</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">📺 YouTube 인플루언서</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">🎧 CS 툴 번역</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">📋 견적서 번역</span><span class="marquee-sep">·</span>
+    <span class="marquee-item">🌐 웹페이지 이중언어</span><span class="marquee-sep">·</span>
+  </div>
+</div>
+
+<!-- ===== PRODUCT BRIEF ===== -->
+<section class="brief-bg" id="brief">
+  <div class="inner">
+    <div class="sec-head reveal">
+      <div class="sec-label">Product Brief</div>
+      <h2 class="sec-title">제품 브리프</h2>
+      <p class="sec-desc">한 줄 요약: 이머시브 번역은 글로벌 비즈니스 종사자가 어떤 언어의 콘텐츠든 완벽하게 읽고 쓸 수 있게 해주는 AI 번역 브라우저 플러그인입니다.</p>
+    </div>
+    <div class="brief-grid reveal">
+      <div class="brief-card">
+        <div class="brief-card-head">
+          <div class="brief-card-icon" style="background:var(--color-feedback-info-bg)">🌐</div>
+          <div><div class="brief-card-title">핵심 포지셔닝</div><div class="brief-card-sub">AI 이중언어 번역 플러그인</div></div>
+        </div>
+        <div class="brief-card-body">설치 즉시 모든 웹페이지, PDF, 영상 자막, 입력창 내용을 번역할 수 있습니다. Chrome / Edge / Safari / Firefox를 지원하며 모바일에서도 사용 가능합니다.</div>
+        <div class="brief-card-tags">
+          <span class="tag tag-brand">브라우저 플러그인</span>
+          <span class="tag tag-blue">이중언어 대조</span>
+          <span class="tag tag-green">기본 기능 무료</span>
+        </div>
+      </div>
+      <div class="brief-card">
+        <div class="brief-card-head">
+          <div class="brief-card-icon" style="background:var(--color-feedback-success-bg)">💰</div>
+          <div><div class="brief-card-title">가격 및 무료 제공량</div><div class="brief-card-sub">무료 사용, Pro 버전으로 고급 기능 잠금 해제</div></div>
+        </div>
+        <div class="brief-card-body">기본 웹페이지/영상 번역은 완전 무료입니다. Pro 멤버십으로 AI 전문가, 커스텀 프롬프트, BabelDOC(<strong style="color:var(--color-feedback-success-default)">월 100장 무료</strong>) 등 고급 기능을 잠금 해제하세요.</div>
+        <div class="brief-card-tags">
+          <span class="tag tag-green">기본 기능 무료</span>
+          <span class="tag tag-blue">BabelDOC 월 100장</span>
+          <span class="tag tag-purple">Pro 월간/연간 결제</span>
+        </div>
+      </div>
+      <div class="brief-card">
+        <div class="brief-card-head">
+          <div class="brief-card-icon" style="background:var(--color-status-processing-bg)">📦</div>
+          <div><div class="brief-card-title">해외영업 시나리오</div><div class="brief-card-sub">해외영업 담당자 · 글로벌 셀러</div></div>
+        </div>
+        <div class="brief-card-body">B2B 플랫폼 탐색, 바이어 이메일 번역, 계약서·견적서 처리, AI 법률 전문가로 외국어 법률 조항 작성까지 — 해외영업 전 과정의 언어 장벽을 한 번에 해소하세요.</div>
+        <div class="brief-card-tags">
+          <span class="tag tag-orange">비즈니스 이메일</span>
+          <span class="tag tag-orange">계약서 번역</span>
+          <span class="tag tag-purple">AI 법률 전문가</span>
+          <span class="tag tag-green">견적서</span>
+        </div>
+      </div>
+      <div class="brief-card">
+        <div class="brief-card-head">
+          <div class="brief-card-icon" style="background:var(--primitive-pink-50)">🎬</div>
+          <div><div class="brief-card-title">해외마케팅 시나리오</div><div class="brief-card-sub">인플루언서 마케터 · 글로벌 브랜드</div></div>
+        </div>
+        <div class="brief-card-body">해외 인플루언서 프로필 분석, 댓글 번역, 컨택 이메일 발송, CS 티켓 처리 — 인플루언서 마케팅 전 과정을 아우르는 필수 언어 효율 툴입니다.</div>
+        <div class="brief-card-tags">
+          <span class="tag tag-brand">인플루언서 발굴</span>
+          <span class="tag tag-brand">컨택 이메일</span>
+          <span class="tag tag-blue">CS 번역</span>
+          <span class="tag tag-brand">영상 자막</span>
+        </div>
+      </div>
+    </div>
+    <div class="key-info-box reveal">
+      <div class="key-info-label">팔로워에게 꼭 전달해야 할 핵심 메시지</div>
+      <div class="key-info-grid">
+        <div class="key-info-item"><span class="key-info-num">①</span><div class="key-info-text"><strong>기본 기능 완전 무료</strong>, 설치 즉시 사용 가능, 가입이나 결제 불필요</div></div>
+        <div class="key-info-item"><span class="key-info-num">②</span><div class="key-info-text"><strong>해외영업 전 과정 커버</strong>, B2B 플랫폼 탐색부터 계약 체결까지 언어 장벽 완벽 해소</div></div>
+        <div class="key-info-item"><span class="key-info-num">③</span><div class="key-info-text"><strong>BabelDOC 월 100장 무료</strong>, 계약서·견적서·스크립트 PDF 이중언어 번역, 원본 레이아웃 유지</div></div>
+        <div class="key-info-item"><span class="key-info-num">④</span><div class="key-info-text"><strong>AI 법률 전문가</strong>, 법률 초보자도 쉬운 말로 전문적인 외국어 법률 조항 작성 가능 (Pro 기능)</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DUAL TRACK WORKFLOW ===== -->
+<section class="workflow-bg" id="workflow">
+  <div class="inner">
+    <div class="sec-head reveal">
+      <div class="sec-label">Workflow Scenarios</div>
+      <h2 class="sec-title">두 가지 업무 시나리오</h2>
+      <p class="sec-desc">해외영업(무역/이커머스)과 해외마케팅(인플루언서/CS)은 서로 다른 타깃 직군입니다. 본인에게 더 익숙한 직무를 선택해 팔로워에게 소개해보세요.</p>
+    </div>
+    <div class="track-selector reveal">
+      <button class="track-btn active-trade" id="tradeBtnMain" onclick="switchTrack('trade')">
+        <span class="track-icon">📦</span>
+        <div style="text-align:left">
+          <div style="font-size:14px;font-weight:800">해외영업 라인</div>
+          <div style="font-size:11px;font-weight:500;opacity:0.8;margin-top:1px">해외영업 담당자 · 글로벌 셀러 · 구매담당</div>
+        </div>
+      </button>
+      <button class="track-btn" id="opsBtnMain" onclick="switchTrack('ops')">
+        <span class="track-icon">🎬</span>
+        <div style="text-align:left">
+          <div style="font-size:14px;font-weight:800">해외마케팅 라인</div>
+          <div style="font-size:11px;font-weight:500;opacity:0.8;margin-top:1px">인플루언서 마케터 · 글로벌 브랜드 · CS 담당</div>
+        </div>
+      </button>
+    </div>
+
+    <!-- TRADE TRACK -->
+    <div class="track-panel active" id="track-trade">
+      <div class="track-notice track-notice-trade">📦 <strong style="color:var(--color-status-processing-default)">해외영업 라인</strong>：해외영업 담당자, 글로벌 셀러, 구매 담당자에게 적합합니다. 핵심 페인포인트는 언어 장벽으로 인한 소통 비효율, 계약서 이해 어려움, 협상 불이익입니다.</div>
+      <div class="phase-tabs" id="tradePhaseTabs">
+        <button class="phase-tab active-trade" onclick="switchPhase('trade',0)">① B2B 플랫폼 탐색 & 바이어 발굴</button>
+        <button class="phase-tab" onclick="switchPhase('trade',1)">② 비즈니스 이메일 왕래</button>
+        <button class="phase-tab" onclick="switchPhase('trade',2)">③ 계약서 & 문서 처리</button>
+        <button class="phase-tab" onclick="switchPhase('trade',3)">④ CS & 사후 관리</button>
+      </div>
+      <div class="phase-panel active" id="trade-phase-0">
+        <div class="phase-header reveal"><div class="phase-num phase-num-trade">01</div><div><div class="phase-title">🔍 B2B 플랫폼 탐색 & 바이어 발굴</div><div class="phase-desc">Alibaba, Made-in-China, Global Sources 등 B2B 플랫폼에서 제품 설명, 공급업체 소개, 바이어 리뷰 대부분이 영어 또는 다국어로 작성되어 있습니다. 이머시브 번역으로 다른 툴로 전환할 필요 없이 플랫폼에서 바로 이중언어 대조로 읽으세요.</div></div></div>
+        <div class="phase-features reveal">
+          <div class="feat-card"><div class="feat-card-head"><span class="feat-card-icon">🛒</span><span class="feat-card-name">B2B 플랫폼 전체 페이지 번역</span><span class="badge-free">무료</span></div><div class="feat-card-body">Alibaba, Made-in-China, Global Sources 등 플랫폼을 열고 원클릭으로 이중언어 대조를 활성화하면 제품 설명, 스펙, 공급업체 자격 정보가 모두 이중언어로 표시됩니다. 적합한 바이어를 빠르게 선별하세요.</div><div class="feat-card-tip tip-trade">💡 <strong>시나리오:</strong> Alibaba에서 바이어를 찾을 때 제품 상세 페이지를 바로 번역 — 복사/붙여넣기 불필요</div></div>
+          <div class="feat-card"><div class="feat-card-head"><span class="feat-card-icon">⭐</span><span class="feat-card-name">바이어 리뷰 번역</span><span class="badge-free">무료</span></div><div class="feat-card-body">플랫폼의 외국어 바이어 리뷰를 번역하여 기업의 실제 평판, 제품 품질 문제, 배송 속도 등 핵심 정보를 파악하고 리스크를 방지하세요.</div><div class="feat-card-tip tip-trade">💡 <strong>시나리오: </strong>거래 전 바이어의 부정적인 리뷰를 번역하여 기업의 흔한 문제점과 리스크를 파악합니다.</div></div>
+          <div class="feat-card"><div class="feat-card-head"><span class="feat-card-icon">🌐</span><span class="feat-card-name">경쟁사/업계 동향 번역</span><span class="badge-free">무료</span></div><div class="feat-card-body">해외 업계 미디어, 경쟁사 공식 홈페이지, 시장 리포트를 번역하여 타깃 시장 최신 동향, 경쟁사 가격 전략, 업계 트렌드를 파악하고 상품 선정 및 가격 결정에 활용하세요.</div><div class="feat-card-tip tip-trade">💡 <strong>시나리오:</strong> Amazon 경쟁사 리스팅을 번역하여 셀링 포인트와 유저 페인포인트를 분석합니다.</div></div>
+          <div class="feat-card"><div class="feat-card-head"><span class="feat-card-icon">📊</span><span class="feat-card-name">세관/인증 문서 번역</span><span class="badge-pro">Pro</span></div><div class="feat-card-body">BabelDOC으로 바이어가 제공한 HS 코드 문서, 제품 인증 보고서(CE, FCC, RoHS 등)를 번역하여 제품의 규정 준수 여부를 빠르게 확인하고 통관 리스크를 방지하세요.</div><div class="feat-card-tip tip-trade">💡 <strong>시나리오:</strong> 공급업체의 CE 인증 보고서를 받아 BabelDOC에 업로드하면 이중언어 대조 버전으로 핵심 내용을 확인할 수 있습니다.</div></div>
+        </div>
+      </div>
+      <div class="phase-panel" id="trade-phase-1">
+        <div class="phase-header reveal"><div class="phase-num phase-num-trade">02</div><div><div class="phase-title">✉️ 비즈니스 이메일 왕래</div><div class="phase-desc">해외 공급업체, 바이어, 파트너와의 이메일 소통은 해외영업의 핵심입니다. 이머시브 번역으로 한국어로 이메일을 작성하고 AI가 자연스러운 외국어로 번역해주며, 상대방의 이메일도 빠르게 이해할 수 있어 이메일 왕래 효율이 크게 향상됩니다.</div></div></div>
+        <div class="phase-features reveal">
+          <div class="feat-card"><div class="feat-card-head"><span class="feat-card-icon">✉️</span><span class="feat-card-name">Gmail AI Reply 이메일 작성 보조</span><span class="badge-pro">Pro</span></div><div class="feat-card-body">Gmail에서 한국어로 이메일 의도를 입력하면 AI가 자연스러운 영어/일어/중국어 비즈니스 이메일을 자동 생성합니다. 인콰이어리, 독촉, 클레임, 협상 등 모든 해외영업 상황에 적용됩니다.</div><div class="feat-card-tip tip-trade">💡 <strong>사용법:</strong> Gmail 작성창 열기 → 이머시브 번역 AI 아이콘 클릭 → 한국어로 의도 입력 → 전문 비즈니스 이메일 생성</div></div>
+          <div class="feat-card"><div class="feat-card-head"><span class="feat-card-icon">⌨️</span><span class="feat-card-name">입력창 스페이스바 3번 번역</span><span class="badge-free">무료</span></div><div class="feat-card-body">어떤 웹페이지 입력창에서든 한국어를 입력한 후 스페이스바를 3번 연속으로 누르면 자동으로 목표 언어로 번역됩니다. Gmail, Alibaba 메시지, 각종 B2B 플랫폼 인콰이어리 답변에 활용하세요.</div><div class="feat-card-tip tip-trade">💡 <strong>사용법:</strong> 입력창에 한국어 작성 → 스페이스바 3번 연속 → 외국어로 자동 번역, 다른 툴 전환 불필요</div></div>
+          <div class="feat-card"><div class="feat-card-head"><span class="feat-card-icon">🔄</span><span class="feat-card-name">수신 이메일 이중언어 대조 읽기</span><span class="badge-free">무료</span></div><div class="feat-card-body">외국어 이메일을 받았을 때 원클릭으로 이중언어 대조를 활성화하면 원문과 번역문이 나란히 표시되어 상대방의 의도를 빠르게 파악하고 세부 내용을 놓치지 않습니다.</div><div class="feat-card-tip tip-trade">💡 <strong>시나리오:</strong> 영문 인콰이어리 이메일을 받아 이중언어 대조로 읽고 바이어의 요구사항과 진의를 빠르게 파악합니다.</div></div>
+          <div class="feat-card"><div class="feat-card-head"><span class="feat-card-icon">🎨</span><span class="feat-card-name">해외영업 커스텀 프롬프트</span><span class="badge-pro">Pro</span></div><div class="feat-card-body">전용 비즈니스 이메일 프롬프트를 설정하세요. 예: "전문적인 B2B 비즈니스 영어로 번역해줘. 어조는 격식 있되 친근하게, 해외 바이어 소통 규범에 맞게"라고 설정하면 모든 이메일이 해외영업 업계 표현 습관에 맞게 번역됩니다.</div><div class="feat-card-tip tip-trade">💡 <strong>프롬프트 예시:</strong> "전문적인 비즈니스 영어로 번역해줘. 어조는 격식 있고 친근하게, 해외 바이어와의 B2B 소통에 적합하게 해줘"</div></div>
+        </div>
+      </div>
+      <div class="phase-panel" id="trade-phase-2">
+        <div class="phase-header reveal"><div class="phase-num phase-num-trade">03</div><div><div class="phase-title">📄 계약서 & 문서 처리</div><div class="phase-desc">무역 계약서, 견적서, 패킹 리스트, 선하증권, 신용장 — 이런 문서들은 대부분 영어 또는 다국어로 작성되어 있으며 금액과 법적 책임이 걸려 있습니다. BabelDOC으로 모든 문서를 빠르게 이해하고, AI 법률 전문가로 전문적인 외국어 법률 조항을 작성해 언어 문제로 손해 보는 일을 없애세요.</div></div></div>
+        <div class="phase-features reveal">
+          <div class="feat-card"><div class="feat-card-head"><span class="feat-card-icon">📄</span><span class="feat-card-name">BabelDOC 계약서 이중언어 번역</span><span class="badge-pro">Pro</span></div><div class="feat-card-body">외국어 계약서 PDF를 업로드하면 BabelDOC이 자동으로 이중언어 대조 버전을 생성하며 원본 레이아웃 형식을 유지합니다. Pro 유저는 매월 <strong style="color:var(--color-feedback-success-default)">100장 무료 제공</strong>됩니다.</div><div class="feat-card-tip tip-trade">💡 <strong>시나리오:</strong> 영문 구매 계약서를 받아 업로드하면 5분 내에 한영 이중언어 대조 버전을 얻어 조항별로 검토할 수 있습니다.</div></div>
+          <div class="feat-card"><div class="feat-card-head"><span class="feat-card-icon">⚖️</span><span class="feat-card-name">AI 전문가 "법률 전문가"</span><span class="badge-pro">Pro</span></div><div class="feat-card-body">Pro 유저는 "법률 전문가" AI 모드를 활성화하여 법률 초보자도 쉬운 말로 전문적인 외국어 법률 조항을 작성할 수 있어 언어 장벽으로 인한 계약 리스크를 줄일 수 있습니다.</div><div class="feat-card-tip tip-trade">💡 <strong>시나리오: </strong>구매 계약 체결 전, "법률 전문가" 모드를 사용하여 전문적인 법률 조항 초안을 작성합니다.</div></div>
+          <div class="feat-card"><div class="feat-card-head"><span class="feat-card-icon">📋</span><span class="feat-card-name">견적서 & 패킹 리스트 번역</span><span class="badge-pro">Pro</span></div><div class="feat-card-body">공급업체 견적서, 패킹 리스트(Packing List), 상업 송장(Commercial Invoice)을 번역하여 제품 스펙, 수량, 단가가 정확한지 확인하세요.</div><div class="feat-card-tip tip-trade">💡 <strong>시나리오:</strong> 공급업체 견적서를 검토하며 FOB, CIF 등 무역 용어와 가격 조건이 기대치에 맞는지 확인합니다.</div></div>
+          <div class="feat-card"><div class="feat-card-head"><span class="feat-card-icon">📚</span><span class="feat-card-name">무역 용어집</span><span class="badge-pro">Pro</span></div><div class="feat-card-body">Pro 유저는 커스텀 용어집을 설정하여 FOB, CIF, L/C, MOQ, EXW 등 무역 전문 용어가 정확하고 일관되게 번역되도록 하여 용어 오역으로 인한 계약 분쟁을 방지할 수 있습니다.</div><div class="feat-card-tip tip-trade">💡 <strong>시나리오:</strong> 무역 용어집을 설정하여 모든 문서의 무역 용어 번역이 통일되고 정확하도록 보장합니다.</div></div>
+        </div>
+      </div>
+      <div class="phase-panel" id="trade-phase-3">
+        <div class="phase-header reveal"><div class="phase-num phase-num-trade">04</div><div><div class="phase-title">🎧 글로벌 셀러 CS & 사후 관리</div><div class="phase-desc">글로벌 셀러는 매일 해외 바이어의 CS 티켓, 환불 요청, 부정적 리뷰 답변을 대량으로 처리해야 합니다. 이머시브 번역은 Zendesk, Gorgias 등 주요 CS 툴을 지원합니다.</div></div></div>
+        <div class="phase-features reveal">
+          <div class="feat-card"><div class="feat-card-head"><span class="feat-card-icon">🎧</span><span class="feat-card-name">Zendesk / Gorgias 번역</span><span class="badge-free">무료</span></div><div class="feat-card-body">Zendesk, Gorgias, Freshdesk 등 CS 시스템에서 바이어의 문의를 바로 번역하고, 답장 입력창에서 스페이스바 3번 번역 기능을 사용하여 한국어로 답장을 작성한 후 자동으로 외국어로 번역합니다.</div><div class="feat-card-tip tip-trade">💡 <strong>시나리오: </strong>CS 담당자가 영어를 몰라도 한국어로 답장을 쓰면 전문적인 외국어 CS 용어로 자동 번역됩니다.</div></div>
+          <div class="feat-card"><div class="feat-card-head"><span class="feat-card-icon">⭐</span><span class="feat-card-name">Amazon / eBay 부정 리뷰 답변</span><span class="badge-free">무료</span></div><div class="feat-card-body">Amazon, eBay의 외국어 부정 리뷰를 번역하여 바이어의 요구사항을 파악하고, 한국어로 답변을 작성한 후 입력창 번역 기능으로 전문적인 외국어 답변을 발송하여 스토어 평점을 높이세요.</div><div class="feat-card-tip tip-trade">💡 <strong>시나리오:</strong> Amazon 부정 리뷰를 번역하여 바이어의 실제 요구사항을 분석하고 맞춤형 답변으로 바이어 만족도를 높입니다.</div></div>
+          <div class="feat-card"><div class="feat-card-head"><span class="feat-card-icon">🎨</span><span class="feat-card-name">CS 커스텀 프롬프트</span><span class="badge-pro">Pro</span></div><div class="feat-card-body">CS 시나리오에 맞는 전용 번역 프롬프트를 설정하세요. 예: "전문적인 CS 용어로 번역해줘. 어조는 정중하고 인내심 있게, 글로벌 셀러 환불·교환 시나리오에 적합하게"라고 설정하면 CS 답변의 전문성이 높아집니다.</div><div class="feat-card-tip tip-trade">💡 <strong>프롬프트 예시:</strong> "전문적인 영어 CS 용어로 번역해줘. 어조는 정중하고 인내심 있게, 환불 클레임 처리에 적합하게 해줘"</div></div>
+          <div class="feat-card"><div class="feat-card-head"><span class="feat-card-icon">📦</span><span class="feat-card-name">물류 & 통관 문서 번역</span><span class="badge-free">무료</span></div><div class="feat-card-body">물류 회사의 영문 공지, 통관 요건, 세관 검사 통지서를 번역하여 화물 상태와 협조 사항을 빠르게 파악하고 언어 문제로 인한 화물 체류를 방지합니다.</div><div class="feat-card-tip tip-trade">💡 <strong>시나리오: </strong>세관 검사 영문 통지서를 받아 빠르게 번역하여 제출해야 할 문서와 협조 사항을 파악합니다.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- OPS TRACK -->
+    <div class="track-panel" id="track-ops">
+      <div class="track-notice track-notice-ops">🎬 <strong style="color:var(--color-action-primary-default)">해외마케팅 라인</strong>：MCN 인플루언서 운영, 해외 진출 브랜드, KOL 협업 담당자에게 적합합니다. 핵심 페인포인트는 언어 장벽으로 인한 인플루언서 발굴 효율 저하, 컨택 이메일 회신율 부진, CS 처리 지연입니다.</div>
+      <div class="phase-tabs" id="opsPhaseTabs">
+        <button class="phase-tab active-ops" onclick="switchPhase('ops',0)">① 인플루언서 발굴</button>
+        <button class="phase-tab" onclick="switchPhase('ops',1)">② 컨택 이메일 발송</button>
+        <button class="phase-tab" onclick="switchPhase('ops',2)">③ CS / 사후 관리</button>
+        <button class="phase-tab" onclick="switchPhase('ops',3)">④ 문서 처리</button>
+      </div>
+      <div class="phase-panel active" id="ops-phase-0">
+        <div class="phase-header reveal"><div class="phase-num phase-num-ops">01</div><div><div class="phase-title">🔍 인플루언서 발굴</div><div class="phase-desc">YouTube, TikTok, Instagram 등 플랫폼에서 해외 인플루언서를 탐색할 때 프로필, 댓글, 영상 설명을 빠르게 읽어야 합니다. 이머시브 번역으로 외국어를 몰라도 적합한 인플루언서를 효율적으로 선별하세요.</div></div></div>
+        <div class="phase-features reveal">
+          <div class="feat-card"><div class="feat-card-head"><span class="feat-card-icon">📺</span><span class="feat-card-name">YouTube 인플루언서 채널 번역</span><span class="badge-free">무료</span></div><div class="feat-card-body">YouTube 인플루언서 채널 페이지를 열고 원클릭으로 채널 소개, 영상 제목, 댓글 내용을 번역하세요. 인플루언서 스타일, 타깃 오디언스, 콘텐츠 방향이 브랜드와 맞는지 빠르게 판단할 수 있습니다.</div><div class="feat-card-tip tip-ops">💡 <strong>사용법:</strong> 인플루언서 채널 페이지 열기 → 플러그인 아이콘 클릭 → 페이지 즉시 이중언어 대조 표시</div></div>
+          <div class="feat-card"><div class="feat-card-head"><span class="feat-card-icon">🎬</span><span class="feat-card-name">자막 없는 영상 번역</span><span class="badge-pro">Pro</span></div><div class="feat-card-body">자막이 없는 YouTube 영상의 경우, 이머시브 번역이 음성을 자동 인식하여 이중언어 자막을 생성해주므로 인플루언서의 실제 콘텐츠 스타일을 이해하고 협업 가치를 평가할 수 있습니다.</div><div class="feat-card-tip tip-ops">💡 <strong>시나리오: </strong>해외 인플루언서 영상 콘텐츠 품질 평가, 외국어를 몰라도 콘텐츠 톤앤매너 판단 가능</div></div>
+          <div class="feat-card"><div class="feat-card-head"><span class="feat-card-icon">🎵</span><span class="feat-card-name">TikTok / Instagram 프로필 번역</span><span class="badge-free">무료</span></div><div class="feat-card-body">TikTok 인플루언서 프로필 소개, 댓글 인터랙션, Instagram 게시물 문구를 번역하여 인플루언서의 오디언스 언어 선호도와 콘텐츠 스타일을 빠르게 파악하고 선별 효율을 높이세요.</div><div class="feat-card-tip tip-ops">💡 <strong>시나리오:</strong> TikTok Shop 인플루언서를 발굴할 때 인플루언서 프로필과 팔로워 댓글을 빠르게 읽고 이해합니다.</div></div>
+          <div class="feat-card"><div class="feat-card-head"><span class="feat-card-icon">💬</span><span class="feat-card-name">댓글 이중언어 대조</span><span class="badge-free">무료</span></div><div class="feat-card-body">인플루언서 영상의 댓글을 번역하여 팔로워의 실제 반응, 소통 퀄리티, 타겟 오디언스를 파악하고 인플루언서의 팔로워가 타겟 고객층인지 판단하여 가짜 팔로워/저품질 인플루언서를 피하세요.</div><div class="feat-card-tip tip-ops">💡 <strong>시나리오: </strong>댓글 번역을 통해 인플루언서 팔로워의 활동성과 진성 여부를 판단합니다.</div></div>
+        </div>
+      </div>
+      <div class="phase-panel" id="ops-phase-1">
+        <div class="phase-header reveal"><div class="phase-num phase-num-ops">02</div><div><div class="phase-title">✉️ 컨택 이메일 발송</div><div class="phase-desc">해외 인플루언서에게 협업 초대 이메일을 보내는 것은 해외마케팅의 핵심 단계입니다. 이머시브 번역의 Gmail AI Reply와 입력창 번역 기능으로 모국어로 작성하면 AI가 자연스러운 외국어로 번역해주어 컨택 이메일 회신율을 높일 수 있습니다.</div></div></div>
+        <div class="phase-features reveal">
+          <div class="feat-card"><div class="feat-card-head"><span class="feat-card-icon">✉️</span><span class="feat-card-name">Gmail AI Reply</span><span class="badge-pro">Pro</span></div><div class="feat-card-body">Gmail에서 AI 보조 답장을 바로 사용하세요. 한국어로 전달하고 싶은 내용을 입력하면 AI가 자연스러운 영어/일어/중국어 이메일을 자동 생성하며 원클릭으로 초안에 삽입할 수 있습니다.</div><div class="feat-card-tip tip-ops">💡 <strong>사용법:</strong> Gmail 작성 화면 열기 → 이머시브 번역 AI 아이콘 클릭 → 한국어로 의도 입력 → 외국어 이메일 생성</div></div>
+          <div class="feat-card"><div class="feat-card-head"><span class="feat-card-icon">🔄</span><span class="feat-card-name">이중언어 대조로 어조 확인</span><span class="badge-free">무료</span></div><div class="feat-card-body">발송 전 외국어 이메일 내용을 웹페이지에 붙여넣고 이중언어 대조 모드를 활성화하여 번역이 정확한지, 어조가 적절한지 문장별로 확인하세요. 어조 문제로 인한 컨택 실패를 방지합니다.</div><div class="feat-card-tip tip-ops">💡 <strong>시나리오:</strong> 발송 전 이중언어 대조로 이메일 어조가 전문적이고 친근한지, 딱딱하거나 지나치게 격식 있지 않은지 확인합니다.</div></div>
+          <div class="feat-card"><div class="feat-card-head"><span class="feat-card-icon">🎨</span><span class="feat-card-name">커스텀 프롬프트 (캐주얼 영어)</span><span class="badge-pro">Pro</span></div><div class="feat-card-body">Pro 유저는 커스텀 번역 프롬프트를 설정할 수 있습니다. 예: "미국식 캐주얼 영어로 번역해줘, 어조는 친근하고 가볍게"라고 설정하면 컨택 이메일이 해외 인플루언서의 소통 습관에 더 가까워져 회신율이 높아집니다.</div><div class="feat-card-tip tip-ops">💡 <strong>프롬프트 예시:</strong> "미국식 영어로 번역해줘. 어조는 가볍고 친근하게, 친구 사이의 비즈니스 소통처럼"</div></div>
+          <div class="feat-card"><div class="feat-card-head"><span class="feat-card-icon">⌨️</span><span class="feat-card-name">입력창 스페이스바 3번 번역</span><span class="badge-free">무료</span></div><div class="feat-card-body">어떤 웹페이지 입력창에서든 한국어를 입력한 후 스페이스바를 3번 연속으로 누르면 자동으로 목표 언어로 번역됩니다. Gmail, LinkedIn, 각종 CRM 시스템의 이메일 작성에 활용하세요.</div><div class="feat-card-tip tip-ops">💡 <strong>사용법:</strong> 입력창에 한국어 작성 → 스페이스바 3번 연속 → 외국어로 자동 번역, 다른 툴 전환 불필요</div></div>
+        </div>
+      </div>
+      <div class="phase-panel" id="ops-phase-2">
+        <div class="phase-header reveal"><div class="phase-num phase-num-ops">03</div><div><div class="phase-title">🎧 CS / 사후 관리</div><div class="phase-desc">해외 고객의 사후 문의, 클레임, 환불 요청을 처리할 때 외국어 내용을 빠르게 이해하고 전문적인 답변을 제공해야 합니다. 이머시브 번역은 Zendesk, Gorgias 등 주요 CS 툴의 입력창 번역을 지원합니다.</div></div></div>
+        <div class="phase-features reveal">
+          <div class="feat-card"><div class="feat-card-head"><span class="feat-card-icon">🎧</span><span class="feat-card-name">Zendesk 입력창 번역</span><span class="badge-free">무료</span></div><div class="feat-card-body">Zendesk CS 티켓 시스템에서 고객 문의를 바로 번역하고, 답변 입력창에서 스페이스바 3번 번역 기능을 사용하여 한국어로 작성한 후 자동으로 외국어로 번역해 발송하세요.</div><div class="feat-card-tip tip-ops">💡 <strong>시나리오:</strong> CS 담당자가 영어를 몰라도 한국어로 답변을 쓰면 전문적인 외국어 CS 용어로 자동 번역됩니다.</div></div>
+          <div class="feat-card"><div class="feat-card-head"><span class="feat-card-icon">💬</span><span class="feat-card-name">Gorgias / Freshdesk 호환</span><span class="badge-free">무료</span></div><div class="feat-card-body">이머시브 번역은 Gorgias, Freshdesk, Intercom 등 모든 웹 기반 CS 툴의 입력창 번역을 지원하며 글로벌 셀러가 사용하는 주요 CS 플랫폼을 커버합니다.</div><div class="feat-card-tip tip-ops">💡 <strong>호환성:</strong> 웹 기반 입력창이라면 이머시브 번역으로 모두 번역 지원</div></div>
+          <div class="feat-card"><div class="feat-card-head"><span class="feat-card-icon">🎨</span><span class="feat-card-name">CS 커스텀 프롬프트</span><span class="badge-pro">Pro</span></div><div class="feat-card-body">CS 시나리오에 맞는 전용 번역 프롬프트를 설정하세요. 예: "전문적인 CS 용어로 번역해줘. 어조는 정중하고 인내심 있게, 이커머스 환불·교환 시나리오에 적합하게"라고 설정하면 CS 답변의 전문성이 높아집니다.</div><div class="feat-card-tip tip-ops">💡 <strong>프롬프트 예시:</strong> "전문적인 영어 CS 용어로 번역해줘. 어조는 정중하고 인내심 있게, 환불 클레임 처리에 적합하게 해줘"</div></div>
+          <div class="feat-card"><div class="feat-card-head"><span class="feat-card-icon">📖</span><span class="feat-card-name">고객 문의 실시간 번역</span><span class="badge-free">무료</span></div><div class="feat-card-body">외국어 고객 이메일이나 티켓을 받았을 때 원클릭으로 전문을 번역하여 고객 요구사항을 빠르게 파악하고 문제 유형(배송/품질/환불 등)을 판단하여 티켓 처리 속도를 높이세요.</div><div class="feat-card-tip tip-ops">💡 <strong>시나리오:</strong> 피크 시즌 대량의 외국어 티켓을 번역 후 빠르게 분류 처리하여 효율 3~5배 향상</div></div>
+        </div>
+      </div>
+      <div class="phase-panel" id="ops-phase-3">
+        <div class="phase-header reveal"><div class="phase-num phase-num-ops">04</div><div><div class="phase-title">📄 문서 처리</div><div class="phase-desc">글로벌 비즈니스에서는 계약서, 영상 스크립트, 법률 문서 번역이 빈번하게 발생합니다. BabelDOC 전문 문서 번역 툴로 PDF를 직접 번역하고 원본 레이아웃을 유지하세요. AI 법률 전문가로 법률 초보자도 전문적인 외국어 법률 조항을 작성할 수 있습니다.</div></div></div>
+        <div class="phase-features reveal">
+          <div class="feat-card"><div class="feat-card-head"><span class="feat-card-icon">📄</span><span class="feat-card-name">BabelDOC 계약서 번역</span><span class="badge-pro">Pro</span></div><div class="feat-card-body">외국어 협업 계약서 PDF를 업로드하면 BabelDOC이 자동으로 이중언어 대조 버전을 생성하며 원본 레이아웃 형식을 유지합니다. Pro 유저는 매월 <strong style="color:var(--color-feedback-success-default)">100장 무료 제공</strong>됩니다.</div><div class="feat-card-tip tip-ops">💡 <strong>시나리오:</strong> 해외 인플루언서의 영문 협업 계약서를 받아 업로드하면 5분 내에 한영 이중언어 대조 버전을 얻을 수 있습니다.</div></div>
+          <div class="feat-card"><div class="feat-card-head"><span class="feat-card-icon">🎬</span><span class="feat-card-name">영상 스크립트 PDF 번역</span><span class="badge-pro">Pro</span></div><div class="feat-card-body">외국어 영상 스크립트 PDF를 BabelDOC에 업로드하면 이중언어 대조 버전을 얻을 수 있어 운영팀이 인플루언서의 콘텐츠 방향을 이해하거나, 한국어 스크립트를 외국어로 번역해 해외 인플루언서에게 전달할 수 있습니다.</div><div class="feat-card-tip tip-ops">💡 <strong>시나리오:</strong> 해외 인플루언서에게 스크립트를 보낼 때 한국어 스크립트를 영어/일어로 번역하여 포맷 유지한 채로 바로 발송</div></div>          <div class="feat-card"><div class="feat-card-head"><span class="feat-card-icon">⚖️</span><span class="feat-card-name">AI 전문가 "법률 전문가"</span><span class="badge-pro">Pro</span></div><div class="feat-card-body">Pro 유저는 "법률 전문가" AI 모드를 활성화하여 법률 초보자도 쉬운 말로 전문적인 외국어 법률 조항을 작성할 수 있어 언어 장벽으로 인한 계약 리스크를 줄일 수 있습니다.</div><div class="feat-card-tip tip-ops">💡 <strong>시나리오:</strong> 외국어 협업 계약서 초안을 작성할 때 "법률 전문가" 모드로 전문적인 법률 조항을 작성하세요.</div></div>
+          <div class="feat-card"><div class="feat-card-head"><span class="feat-card-icon">📚</span><span class="feat-card-name">용어집 (업계 전문 용어)</span><span class="badge-pro">Pro</span></div><div class="feat-card-body">Pro 유저는 커스텀 용어집을 설정하여 업계 전문 용어가 정확하고 일관되게 번역되도록 하여 용어 오역으로 인한 계약 분쟁을 방지할 수 있습니다.</div><div class="feat-card-tip tip-ops">💡 <strong>시나리오:</strong> 인플루언서 협업 관련 용어집을 설정하여 계약서의 전문 용어 번역이 정확하도록 보장합니다.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRODUCT DEMO ===== -->
+<section class="demo-bg" id="demo">
+  <div class="inner">
+    <div class="sec-head reveal">
+      <div class="sec-label">Product Demo</div>
+      <h2 class="sec-title">제품 실제 화면 데모</h2>
+      <p class="sec-desc">해외영업과 해외마케팅의 핵심 기능, 스크린샷으로 바로 확인하고 영상 촬영 시 참고해서 시연해보세요.</p>
+    </div>
+    <div class="demo-tabs reveal">
+      <button class="demo-tab active-trade" onclick="switchDemo(0)">📧 AI 이메일 답장</button>
+      <button class="demo-tab" onclick="switchDemo(1)">📄 BabelDOC 문서 번역</button>
+      <button class="demo-tab" onclick="switchDemo(2)">🌐 웹페이지 이중언어 번역</button>
+    </div>
+    <div class="demo-panel active" id="demo-0">
+      <div class="demo-layout reveal">
+        <div class="demo-img-wrap">
+          <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663402005199/jFPddjYRvvLarWav.png" alt="Gmail AI Write 이메일 답장 데모" loading="lazy" />
+        </div>
+        <div class="demo-text-wrap">
+          <span class="demo-badge demo-badge-trade">📦 해외영업 라인 · 비즈니스 이메일</span>
+          <div class="demo-title">AI Reply<br>비즈니스 이메일 원클릭 해결</div>
+          <div class="demo-desc">Gmail에서 영문 인콰이어리, 독촉, 클레임 이메일을 받았을 때, 이머시브 번역의 AI Reply 기능은 이메일 화면에서 바로 한국어 요약 + 다국어 답장 초안을 생성해주어 다른 툴로 전환할 필요가 없습니다.</div>
+          <div class="demo-points">
+            <div class="demo-point"><div class="demo-point-icon">✓</div><span>원클릭 이메일 요약 생성, 상대방 의도 빠른 파악</span></div>
+            <div class="demo-point"><div class="demo-point-icon">✓</div><span>AI가 전문적인 영문/다국어 답장 초안 생성</span></div>
+            <div class="demo-point"><div class="demo-point-icon">✓</div><span>인콰이어리, 독촉, 클레임, 견적 등 모든 해외영업 시나리오 지원</span></div>
+            <div class="demo-point"><div class="demo-point-icon">✓</div><span>커스텀 프롬프트로 "해외영업 전문 어조" 설정 가능</span></div>
+          </div>
+          <div><span class="badge-pro">Pro 기능</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="demo-panel" id="demo-1">
+      <div class="demo-layout reverse reveal">
+        <div class="demo-img-wrap">
+          <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663402005199/dALCFYjahIUocUKo.png" alt="BabelDOC 이중언어 대조 효과" loading="lazy" />
+        </div>
+        <div class="demo-text-wrap">
+          <span class="demo-badge demo-badge-trade">📦 해외영업 라인 · 계약서/견적서</span>
+          <div class="demo-title">BabelDOC<br>계약서·견적서 이중언어 번역</div>
+          <div class="demo-desc">외국어 계약서, 견적서, 인증 문서 PDF를 BabelDOC에 업로드하면 자동으로 이중언어 대조 버전을 생성하며 원본 레이아웃을 완전히 유지합니다. Pro 유저는 매월 100장 무료 제공. AI 법률 전문가 모드로 전문적인 외국어 법률 조항 작성을 보조합니다.</div>
+          <div class="demo-points">
+            <div class="demo-point"><div class="demo-point-icon">✓</div><span>PDF 업로드 후 5분 내에 이중언어 대조 버전 획득</span></div>
+            <div class="demo-point"><div class="demo-point-icon">✓</div><span>원본 표, 레이아웃, 이미지 형식 유지</span></div>
+            <div class="demo-point"><div class="demo-point-icon">✓</div><span>AI 법률 전문가 모드로 외국어 법률 조항 작성 보조</span></div>
+            <div class="demo-point"><div class="demo-point-icon">✓</div><span>Pro 매월 100장 무료, 계약서/견적서 전체 커버</span></div>
+          </div>
+          <div><span class="badge-pro">Pro 기능</span> <span style="font-size:12px;color:var(--color-feedback-success-default);font-weight:600;margin-left:6px">매월 100장 무료</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="demo-panel" id="demo-2">
+      <div class="demo-layout reveal">
+        <div class="demo-img-wrap">
+          <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663402005199/EGPySwMJuwDJAAhs.webp" alt="Amazon 웹페이지 이중언어 번역 데모" loading="lazy" />
+        </div>
+        <div class="demo-text-wrap">
+          <span class="demo-badge demo-badge-ops">🎬 두 가지 직무 공통 · 웹페이지 번역</span>
+          <div class="demo-title">웹페이지 이중언어 대조<br>Alibaba / TikTok 모두 적용</div>
+          <div class="demo-desc">어떤 외국어 웹페이지든 열고 원클릭으로 이중언어 대조 모드를 활성화하세요. 원문과 번역문이 나란히 표시되어 왔다갔다 전환할 필요가 없습니다. Alibaba B2B 플랫폼, TikTok 인플루언서 프로필, YouTube 영상 댓글 등 모든 시나리오에 적용됩니다.</div>
+          <div class="demo-points">
+            <div class="demo-point"><div class="demo-point-icon">✓</div><span>원문 + 번역문 나란히 표시, 언제든지 대조 확인</span></div>
+            <div class="demo-point"><div class="demo-point-icon">✓</div><span>Alibaba, Amazon, TikTok, YouTube 등 모든 플랫폼 지원</span></div>
+            <div class="demo-point"><div class="demo-point-icon">✓</div><span>마우스 호버 번역, 스페이스바 3번으로 이중언어 전환</span></div>
+            <div class="demo-point"><div class="demo-point-icon">✓</div><span>기본 기능 완전 무료, 가입 불필요</span></div>
+          </div>
+          <div><span class="badge-free">무료 기능</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CREATION GUIDE ===== -->
+<section class="guide-bg" id="guide">
+  <div class="inner">
+    <div class="sec-head reveal">
+      <div class="sec-label">Creation Guide</div>
+      <h2 class="sec-title">제작 가이드</h2>
+      <p class="sec-desc">두 가지 직무 모두 가능합니다. 본인에게 가장 익숙한 시나리오로 시작하세요. 아래는 방향 제안과 제작 포인트입니다.</p>
+    </div>
+    <div class="guide-grid reveal">
+      <div class="guide-card">
+        <div class="guide-card-label" style="color:var(--color-status-processing-default)">해외영업 라인 · 콘텐츠 방향</div>
+        <div class="guide-card-title">📦 해외영업/글로벌 셀러 시나리오 접근</div>
+        <ul class="guide-list trade">
+          <li>"해외영업 필수템! 이 툴로 EC21 바이어 리뷰 보면 더 이상 당할 일 없음"</li>
+          <li>"비즈니스 이메일 못 쓰겠다고요? 이 플러그인 하나로 인콰이어리, 독촉, 클레임 모든 상황 해결"</li>
+          <li>"BabelDOC으로 견적서 번역하면 FOB/CIF 더 이상 헷갈리지 않고 원본 포맷도 유지됨"</li>
+          <li>"글로벌 CS 치트키: 영문 티켓이 더 이상 악몽이 아님, CS 효율 5배 상승"</li>
+        </ul>
+      </div>
+      <div class="guide-card">
+        <div class="guide-card-label" style="color:var(--color-action-primary-default)">해외마케팅 라인 · 콘텐츠 방향</div>
+        <div class="guide-card-title">🎦 인플루언서 마케팅 시나리오 접근</div>
+        <ul class="guide-list ops">
+          <li>"이머시브 번역으로 TikTok 인플루언서 발굴하는 법, 효율 10배 향상"</li>
+          <li>"해외마케팅 필수 툴, 컨택 이메일 언어 걱정 없이 회신율 2배"</li>
+          <li>"해외 인플루언서에게 기획안 보낼 때, 포맷 유지하며 한영 번역 5분 컷"</li>
+          <li>"글로벌 비즈니스 필수 툴 총정리, 이 플러그인 하나가 툴 4개 몫을 함"</li>
+        </ul>
+      </div>
+    </div>
+    <!-- Creation principles -->
+    <div class="must-box reveal" style="margin-top:24px">
+      <div class="must-box-title">🎥 제작 포인트 (필독)</div>
+      <div class="must-item"><span class="must-icon">🎯</span><div class="must-text"><strong>1~2개 기능에 집중, 너무 많이 담지 않기</strong>：영상 하나당 시청자가 1~2개의 구체적인 시나리오만 기억하게 하면 충분합니다. 기능을 너무 많이 소개하면 오히려 기억에 남지 않습니다.</div></div>
+      <div class="must-item"><span class="must-icon">📸</span><div class="must-text"><strong>본인의 실제 사용 시나리오로 영상 녹화</strong>：실제 조작 화면이 어떤 광고 카피보다 설득력 있습니다. 본인이 해외영업 담당자나 마케터라면, 실제 업무 시 사용하는 모습을 녹화하는 것이 가장 효과적입니다.</div></div>
+      <div class="must-item"><span class="must-icon">🔗</span><div class="must-text"><strong>랜딩 페이지 링크와 CTA가 전환의 핵심</strong>：영상 설명과 댓글란에 반드시 공식 홈페이지 링크를 넣고 명확한 행동 유도 문구를 추가하세요 (예: "링크 클릭해서 무료 설치" "댓글에서 할인 코드 받기"). CTA 유무에 따라 전환율 차이가 10배까지 날 수 있습니다.</div></div>
+      <div class="must-item"><span class="must-icon">✅</span><div class="must-text"><strong>필수 언급 사항</strong>：제품명 「이머시브 번역(Immersive Translate)」, 기본 기능 무료, BabelDOC Pro 매월 100장 무료 제공, 공식 홈페이지 링크 immersivetranslate.com/ko/</div></div>
+      <div class="must-item"><span class="must-icon">⚠️</span><div class="must-text"><strong>Pro 가격 언급 최소화</strong>：무료 기능이 가장 큰 매력입니다. 먼저 시청자가 설치해서 체험하게 하고 자연스럽게 Pro로 전환하도록 유도하세요. 처음부터 유료 기능을 강조하지 마세요.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INSTALL ===== -->
+<section class="install-bg" id="install">
+  <div class="inner">
+    <div class="sec-head reveal">
+      <div class="sec-label">Installation Guide</div>
+      <h2 class="sec-title">설치 가이드</h2>
+      <p class="sec-desc">3분이면 설치 완료, 기본 기능 즉시 사용 가능, 계정 가입 불필요.</p>
+    </div>
+    <div class="install-tabs reveal">
+      <button class="install-tab active" onclick="switchInstall(0)">Chrome / Edge</button>
+      <button class="install-tab" onclick="switchInstall(1)">Safari（iOS / macOS）</button>
+      <button class="install-tab" onclick="switchInstall(2)">Firefox</button>
+    </div>
+    <div class="install-panel active" id="install-0">
+      <div class="install-steps reveal">
+        <div class="install-step"><div class="install-step-num">01</div><div class="install-step-body"><div class="install-step-title">Chrome 웹 스토어 열기</div><div class="install-step-desc">Chrome 또는 Edge 브라우저에서 Chrome 웹 스토어에 접속하여 「이머시브 번역」을 검색하세요.</div><a href="https://chrome.google.com/webstore/detail/immersive-translate/bpoadfkcbjbfhfodiogcnhhhpibjhbnh" target="_blank" class="install-step-link">🔗 Chrome 웹스토어 바로가기 ↗</a></div></div>
+        <div class="install-step"><div class="install-step-num">02</div><div class="install-step-body"><div class="install-step-title">「Chrome에 추가」 클릭</div><div class="install-step-desc">이머시브 번역(Immersive Translate) 확장 프로그램을 찾아 「Chrome에 추가」 버튼을 클릭하고 설치를 확인하세요.</div></div></div>
+        <div class="install-step"><div class="install-step-num">03</div><div class="install-step-body"><div class="install-step-title">도구 모음에 플러그인 고정</div><div class="install-step-desc">설치 완료 후 브라우저 오른쪽 상단 확장 아이콘(퍼즐 아이콘)을 클릭하고 이머시브 번역을 찾아 고정 버튼을 클릭하면 언제든지 편리하게 사용할 수 있습니다.</div></div></div>
+        <div class="install-step"><div class="install-step-num">04</div><div class="install-step-body"><div class="install-step-title">외국어 웹페이지를 열고 번역 시작</div><div class="install-step-desc">Alibaba, YouTube, Gmail 또는 어떤 외국어 웹사이트든 열고 플러그인 아이콘을 클릭하면 페이지가 즉시 이중언어 대조로 변환됩니다. 기본 기능은 가입 없이 바로 사용 가능합니다.</div></div></div>
+      </div>
+    </div>
+    <div class="install-panel" id="install-1">
+      <div class="install-steps reveal">
+        <div class="install-step"><div class="install-step-num">01</div><div class="install-step-body"><div class="install-step-title">App Store에서 검색</div><div class="install-step-desc">iPhone / iPad 또는 Mac의 App Store에서 「이머시브 번역」을 검색하여 공식 앱을 찾으세요.</div><a href="https://apps.apple.com/app/immersive-translate/id6447957425" target="_blank" class="install-step-link">🔗 App Store 바로가기 ↗</a></div></div>
+        <div class="install-step"><div class="install-step-num">02</div><div class="install-step-body"><div class="install-step-title">설치 후 Safari에서 활성화</div><div class="install-step-desc">다운로드 설치 후 「설정 → Safari → 확장 프로그램」으로 이동하여 이머시브 번역을 찾아 활성화하세요.</div></div></div>
+        <div class="install-step"><div class="install-step-num">03</div><div class="install-step-body"><div class="install-step-title">Safari를 열고 번역 시작</div><div class="install-step-desc">Safari에서 외국어 웹페이지를 열고 주소창 왼쪽의 「AA」 아이콘을 클릭하여 이머시브 번역을 선택하면 번역이 시작됩니다.</div></div></div>
+      </div>
+    </div>
+    <div class="install-panel" id="install-2">
+      <div class="install-steps reveal">
+        <div class="install-step"><div class="install-step-num">01</div><div class="install-step-body"><div class="install-step-title">Firefox 애드온 스토어 방문</div><div class="install-step-desc">Firefox 브라우저에서 Firefox 애드온 스토어에 접속하여 「Immersive Translate」를 검색하세요.</div><a href="https://addons.mozilla.org/firefox/addon/immersive-translate/" target="_blank" class="install-step-link">🔗 Firefox 스토어 바로가기 ↗</a></div></div>
+        <div class="install-step"><div class="install-step-num">02</div><div class="install-step-body"><div class="install-step-title">「Firefox에 추가」 클릭</div><div class="install-step-desc">이머시브 번역을 찾아 「Firefox에 추가」를 클릭하고 권한을 확인한 후 설치를 완료하세요.</div></div></div>
+        <div class="install-step"><div class="install-step-num">03</div><div class="install-step-body"><div class="install-step-title">외국어 웹페이지를 열고 번역 시작</div><div class="install-step-desc">설치 완료 후 외국어 웹페이지를 열고 도구 모음의 이머시브 번역 아이콘을 클릭하면 번역이 시작됩니다.</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COLLAB FLOW ===== -->
+<section class="collab-bg" id="collab">
+  <div class="inner">
+    <div class="sec-head reveal">
+      <div class="sec-label">Collaboration Flow</div>
+      <h2 class="sec-title">협업 프로세스</h2>
+      <p class="sec-desc">첫 컨택부터 게시까지 6단계, 명확하고 투명하게, 숨겨진 프로세스 없습니다.</p>
+    </div>
+    <div class="flow-steps">
+      <div class="flow-step reveal"><div class="flow-step-left"><div class="flow-step-num">01</div><div class="flow-step-line"></div></div><div class="flow-step-right"><div class="flow-step-tag tag-blue">첫 컨택 확인</div><div class="flow-step-title">담당자 이메일로 연락, 계정 정보 안내</div><div class="flow-step-desc">주로 활동하는 플랫폼에 따라 담당자 이메일로 직접 연락하여 플랫폼, 팔로워 규모를 설명하고 계정 링크를 보내주세요. 영업일 1일 이내에 답변드립니다.</div><div class="flow-step-items"><span class="flow-item">📱 계정 링크 발송</span><span class="flow-item">👥 팔로워 규모 안내</span><span class="flow-item">📋 콘텐츠 방향 설명</span></div></div></div>
+      <div class="flow-step reveal"><div class="flow-step-left"><div class="flow-step-num">02</div><div class="flow-step-line"></div></div><div class="flow-step-right"><div class="flow-step-tag tag-brand">자료 제공</div><div class="flow-step-title">협업 소재 페이지 + 전용 할인 코드 발송</div><div class="flow-step-desc">협업 확정 후 이 협업 참고 페이지 링크, 팔로워 전용 10% 할인 코드, 공식 로고 소재, Pro 무료 체험 계정(촬영용)을 보내드립니다.</div><div class="flow-step-items"><span class="flow-item">🔗 협업 참고 페이지</span><span class="flow-item">🏷️ 팔로워 전용 할인 코드</span><span class="flow-item">🎁 Pro 무료 체험 계정</span></div></div></div>
+      <div class="flow-step reveal"><div class="flow-step-left"><div class="flow-step-num">03</div><div class="flow-step-line"></div></div><div class="flow-step-right"><div class="flow-step-tag tag-orange">제작 & 검토</div><div class="flow-step-title">자유롭게 제작, 두 단계만 가볍게 확인</div><div class="flow-step-desc">본인의 스타일과 언어로 자유롭게 제작하세요. 스크립트를 그대로 읽을 필요 없습니다. 가벼운 검토 단계가 두 번 있습니다: <strong>① 스크립트 검토</strong> — 촬영 전 핵심 정보가 맞는지 확인; <strong>② 영상 검토</strong> — 게시 전 빠르게 검토, 시청자 오해 방지 목적이며 콘텐츠 스타일에 간섭하지 않습니다.</div><div class="flow-step-items"><span class="flow-item">🎨 자유 제작, 스타일 자유</span><span class="flow-item">📝 스크립트 검토 (촬영 전)</span><span class="flow-item">🎬 영상 검토 (게시 전)</span></div></div></div>
+      <div class="flow-step reveal"><div class="flow-step-left"><div class="flow-step-num">04</div><div class="flow-step-line"></div></div><div class="flow-step-right"><div class="flow-step-tag tag-violet">어필리에이트 프로그램</div><div class="flow-step-title">어필리에이트 프로그램 가입, 전환마다 커미션 수익</div><div class="flow-step-desc">협업 비용 외에도 이머시브 번역 어필리에이트 프로그램에 동시에 가입하는 것을 강력히 권장합니다. 팔로워가 전용 링크로 Pro를 구매하면 지속적인 커미션 수익을 얻을 수 있으며, 많은 KOL의 장기 패시브 인컴 원천이 됩니다.</div><div class="flow-step-items"><span class="flow-item">💰 전환마다 커미션 수익</span><span class="flow-item">🔗 전용 홍보 링크</span><a href="https://immersivetranslate.com/ko/affiliate/" target="_blank" class="flow-item" style="color:var(--color-action-primary-default);border-color:var(--primitive-pink-200);background:var(--primitive-pink-50)">📋 어필리에이트 프로그램 상세 보기 ↗</a></div></div></div>
+      <div class="flow-step reveal"><div class="flow-step-left"><div class="flow-step-num">05</div><div class="flow-step-line"></div></div><div class="flow-step-right"><div class="flow-step-tag tag-green">게시 & 정산</div><div class="flow-step-title">영상 게시, 댓글 상단 고정 링크 & 할인 코드, 보수 정산</div><div class="flow-step-desc">영상 게시 후 댓글란 상단에 공식 홈페이지 링크와 팔로워 전용 할인 코드를 고정하고, 영상 마지막에 주간 이용권 추첨을 언급해주세요. 게시 확인 후 사전에 합의한 방식으로 정산을 완료합니다.</div><div class="benefit-cards"><div class="benefit-card"><div class="benefit-card-label" style="color:var(--color-status-processing-default)">🎁 팔로워 혜택 · 무료 주간 이용권 추첨</div><div class="benefit-card-title">무료 주간 이용권 × 최소 5장</div><div class="benefit-card-desc">최소 5장의 무료 주간 이용권을 제공하여 댓글란이나 영상 마지막에 추첨 이벤트를 진행하고 시청자 참여도와 전환율을 높이세요.</div></div><div class="benefit-card"><div class="benefit-card-label" style="color:var(--color-action-primary-default)">🏷️ 팔로워 전용 할인</div><div class="benefit-card-title">Pro 전용 10% 할인 코드</div><div class="benefit-card-desc">팔로워가 전용 할인 코드로 Pro를 구매하면 10% 할인 혜택을 받습니다. 이 코드는 반드시 댓글 상단 고정이나 영상 마지막에 언급해야 하며 전환 효과에 직접적인 영향을 미칩니다.</div></div></div><div class="flow-step-items"><span class="flow-item">🔗 댓글 상단 고정 링크 & 할인 코드</span><span class="flow-item" style="background:var(--color-status-processing-bg);border-color:#ffd4a8;color:var(--color-status-processing-default)">🎁 추첨 주간 이용권 준비 완료</span><span class="flow-item">💰 보수 정산</span></div></div></div>
+      <div class="flow-step reveal"><div class="flow-step-left"><div class="flow-step-num">06</div><div class="flow-step-line"></div></div><div class="flow-step-right"><div class="flow-step-tag tag-green">전용 혜택</div><div class="flow-step-title">게시 후 1주일, 무료 광고 부스팅 지원 🎁</div><div class="flow-step-desc">영상 게시 후 첫 1주일 동안 자연 유입 성과를 지속적으로 관찰합니다. 데이터가 좋으면 상황에 따라 영상에 <strong style="color:var(--color-feedback-success-default)">무료 광고 부스팅</strong>을 지원하여 더 많은 잠재 시청자에게 도달할 수 있도록 돕습니다.</div><div class="flow-step-items"><span class="flow-item">📊 게시 후 1주일 데이터 관찰</span><span class="flow-item" style="background:var(--color-feedback-success-bg);border-color:#b8e8b5;color:var(--color-feedback-success-default)">🚀 상황에 따른 무료 광고 부스팅</span><span class="flow-item">🎯 더 많은 잠재 시청자 도달</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="testimonials-bg" id="testimonials">
+  <div class="inner">
+    <div class="sec-head reveal">
+      <div class="sec-label">Real Users</div>
+      <h2 class="sec-title">실제 종사자들의 후기</h2>
+      <p class="sec-desc">글로벌 셀러, 해외영업 담당자, 해외마케팅 팀의 실제 사용 후기입니다.</p>
+    </div>
+    <div class="testi-scroll-track">
+      <div class="testi-scroll-inner">
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-quote">해외영업 6년 차인데, 예전엔 Alibaba 바이어 리뷰 보려면 번역기에 복사해야 했는데 이제 페이지에서 바로 이중언어 대조로 봐요. 거래 전에 리뷰 다 번역해서 보니까 더 이상 실수 없어요. BabelDOC 계약서 번역도 정말 유용하고 FOB, CIF 같은 무역 용어 번역도 정확합니다.</div>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:var(--color-status-processing-bg)">🏭</div>
+            <div>
+              <div class="testi-name">김민준 · 서울</div>
+              <div class="testi-role">글로벌 셀러 · 해외영업 6년 경력</div>
+              <span class="testi-plat" style="background:var(--color-status-processing-bg);color:var(--color-status-processing-default)">해외영업 라인</span>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-quote">저희 회사에 해외영업 담당자가 20명 넘는데, 이머시브 번역으로 통일한 후에 이메일 답변 속도가 훨씬 빨라졌어요. AI Reply가 생성하는 영문 초안 퀄리티도 높고, 무엇보다 이메일 화면에서 바로 작업할 수 있어서 다른 툴로 전환할 필요가 없다는 게 핵심입니다.</div>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:var(--color-feedback-info-bg)">🏢</div>
+            <div>
+              <div class="testi-name">이팀장 · 인천</div>
+              <div class="testi-role">무역 회사 · 영업팀 팀장</div>
+              <span class="testi-plat" style="background:var(--color-feedback-info-bg);color:var(--color-feedback-info-default)">기업 단체 유저</span>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-quote">TikTok 인플루언서 발굴할 때 이제 페이지에서 바로 이중언어로 보고 댓글도 번역할 수 있어서 인플루언서 팔로워 퀄리티 판단이 훨씬 빨라졌어요. 컨택 이메일은 입력창 번역 기능 써서 한국어로 쓰면 자동으로 영어로 번역되는데 어조도 제가 직접 쓰는 것보다 자연스러워요.</div>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:var(--primitive-pink-50)">🎦</div>
+            <div>
+              <div class="testi-name">박지수 · 부산</div>
+              <div class="testi-role">MCN 인플루언서 운영 · 해외 브랜드</div>
+              <span class="testi-plat" style="background:var(--primitive-pink-50);color:var(--color-action-primary-default)">해외마케팅 라인</span>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-quote">CS 쪽에서 Zendesk로 티켓 처리하는데, 이머시브 번역으로 Zendesk 페이지에서 바로 번역하고 답변도 입력창에서 한국어로 쓴 다음 영어로 번역해서 보내요. 피크 시즌 처리 속도가 최소 3배 향상됐고 부정 리뷰 답변도 훨씬 전문적이 됐어요.</div>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:var(--color-feedback-success-bg)">🎧</div>
+            <div>
+              <div class="testi-name">Minji · 대구</div>
+              <div class="testi-role">글로벌 셀러 CS팀 팀장</div>
+              <span class="testi-plat" style="background:var(--color-status-processing-bg);color:var(--color-status-processing-default)">해외영업 라인</span>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-quote">저는 Amazon 셀러인데 매일 경쟁사 리스팅이랑 바이어 리뷰를 엄청 봐야 해요. 이머시브 번역 설치하고 나서 Amazon 페이지에서 바로 이중언어로 보니까 상품 선정 효율이 눈에 띄게 올랐어요. BabelDOC으로 제품 인증 문서 번역도 정확하고 CE, FCC 인증 보고서 번역해서 바로 팀장님께 보여드릴 수 있어요.</div>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:var(--color-status-processing-bg)">📦</div>
+            <div>
+              <div class="testi-name">최준혁 · 수원</div>
+              <div class="testi-role">Amazon 셀러 · 글로벌 이커머스 종사자</div>
+              <span class="testi-plat" style="background:var(--color-status-processing-bg);color:var(--color-status-processing-default)">해외영업 라인</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ENTERPRISE ===== -->
+<section class="enterprise-bg" id="enterprise">
+  <div class="inner">
+    <div class="sec-head reveal">
+      <div class="sec-label">Enterprise Plan</div>
+      <h2 class="sec-title">기업 단체 Pro 플랜</h2>
+      <p class="sec-desc">무역 회사, MCN 기관, 해외 진출 브랜드 — 팀 전체에 Pro를 일괄 개통하려면 협의 가격을 제공합니다. 문의해주세요.</p>
+    </div>
+    <div class="enterprise-simple-card reveal">
+      <div class="enterprise-simple-left">
+        <div class="enterprise-simple-icon">🏢</div>
+        <div>
+          <div class="enterprise-simple-title">팀 단체 Pro 개통, 협의 가격 적용</div>
+          <div class="enterprise-simple-desc">무역 회사, MCN 기관, 해외 진출 브랜드 등 직원에게 일괄 Pro를 개통해야 하는 팀에 적합합니다. 구체적인 견적은 Yara에게 문의하세요.</div>
+        </div>
+      </div>
+      <div class="enterprise-simple-right">
+        <div class="enterprise-cta-title">📩 Yara에게 견적 문의</div>
+        <div class="enterprise-cta-sub">이메일：<strong style="font-family:'JetBrains Mono',monospace">yara@babelnovel.com</strong></div>
+        <button class="enterprise-cta-btn" onclick="copyEnterpriseWx(this)">이메일 복사</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="contact-bg" id="contact">
+  <div class="inner">
+    <div class="sec-head reveal">
+      <div class="sec-label">Contact</div>
+      <h2 class="sec-title">문의하기</h2>
+      <p class="sec-desc">주로 활동하는 플랫폼에 따라 담당자 이메일로 직접 연락하여 플랫폼과 팔로워 규모를 알려주시면 빠르게 답변드립니다.</p>
+    </div>
+    <div class="contact-grid reveal">
+      <div class="wx-card"><div class="wx-platform"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/TikTok_logo.svg/512px-TikTok_logo.svg.png" alt="TikTok" style="width:22px;height:22px;object-fit:contain" onerror="this.parentNode.innerHTML='🎵'" /></div><div class="wx-info"><div class="wx-name">逸之 · TikTok / YouTube 담당</div><div class="wx-id">songenqing@funstory.ai</div></div><button class="wx-copy" onclick="copyWx(this,'songenqing@funstory.ai')">이메일 복사</button></div>
+      <div class="wx-card"><div class="wx-platform"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/512px-Instagram_logo_2016.svg.png" alt="Instagram" style="width:22px;height:22px;object-fit:contain" onerror="this.parentNode.innerHTML='📷'" /></div><div class="wx-info"><div class="wx-name">Yara · Instagram / 기타 플랫폼 담당</div><div class="wx-id">yara@babelnovel.com</div></div><button class="wx-copy" onclick="copyWx(this,'yara@babelnovel.com')">이메일 복사</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="inner">
+    <div class="footer-logo-row">
+      <img class="footer-logo-img" src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663402005199/AdlZOKmKnlgVUZuk.jpg" alt="" />
+      <span class="footer-name">이머시브 번역</span>
+    </div>
+    <div class="footer-desc">전 세계 2,000만 명 이상이 신뢰하는 AI 번역 툴 · 해외영업/해외마케팅 KOL 협업 자료</div>
+    <div class="footer-links">
+      <a href="https://immersivetranslate.com/ko/" target="_blank">공식 홈페이지</a>
+      <a href="https://immersivetranslate.com/ko/affiliate/" target="_blank">어필리에이트 프로그램</a>
+      <a href="#brief">제품 브리프</a>
+      <a href="#workflow">업무 시나리오</a>
+      <a href="#guide">제작 가이드</a>
+    </div>
+  </div>
+</footer>
+
+<!-- COLLAB MODAL -->
+<div class="modal-overlay" id="collabModal" onclick="closeModal('collabModal')">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeModal('collabModal')">×</button>
+    <div class="modal-title">🤝 협업 문의하기</div>
+    <div class="modal-sub">주로 활동하는 플랫폼에 따라 담당자 이메일로 직접 연락하여 플랫폼과 팔로워 규모를 알려주시고 계정 링크를 보내주세요. 빠르게 답변드립니다.</div>
+    <div class="wx-card"><div class="wx-platform"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/TikTok_logo.svg/512px-TikTok_logo.svg.png" alt="TikTok" style="width:22px;height:22px;object-fit:contain" onerror="this.parentNode.innerHTML='🎵'" /></div><div class="wx-info"><div class="wx-name">逸之 · TikTok / YouTube 담당</div><div class="wx-id">songenqing@funstory.ai</div></div><button class="wx-copy" onclick="copyWx(this,'songenqing@funstory.ai')">이메일 복사</button></div>
+    <div class="wx-card"><div class="wx-platform"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/512px-Instagram_logo_2016.svg.png" alt="Instagram" style="width:22px;height:22px;object-fit:contain" onerror="this.parentNode.innerHTML='📷'" /></div><div class="wx-info"><div class="wx-name">Yara · Instagram / 기타 플랫폼 담당</div><div class="wx-id">yara@babelnovel.com</div></div><button class="wx-copy" onclick="copyWx(this,'yara@babelnovel.com')">이메일 복사</button></div>
+  </div>
+</div>
+
+<!-- SHARE MODAL -->
+<div class="modal-overlay" id="shareModal" onclick="closeModal('shareModal')">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeModal('shareModal')">×</button>
+    <div class="modal-title">🔗 이 자료 공유하기</div>
+    <div class="modal-sub">이 협업 참고 자료를 관심 있는 KOL이나 동료에게 공유하여 이머시브 번역의 해외영업/해외마케팅 협업 기회를 알려주세요.</div>
+    <div style="padding:12px;background:var(--primitive-neutral-100);border-radius:var(--radius-button);border:1px solid var(--color-border-subtle);font-size:13px;font-family:'JetBrains Mono',monospace;color:var(--color-text-secondary);word-break:break-all;margin-bottom:12px">https://it-kol.github.io/trade-kr/</div>
+    <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="copyUrl()">📋 링크 복사</button>
+    <div class="share-grid">
+      <div class="share-item" onclick="shareToKakao()"><span class="share-plat-icon">💬</span><span class="share-plat-label">카카오톡</span></div>
+      <div class="share-item" onclick="shareToNaver()"><span class="share-plat-icon">🟢</span><span class="share-plat-label">네이버</span></div>
+      <div class="share-item" onclick="shareToTwitter()"><span class="share-plat-icon">🐦</span><span class="share-plat-label">Twitter/X</span></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Track switching
+  function switchTrack(track) {
+    document.getElementById('track-trade').classList.remove('active');
+    document.getElementById('track-ops').classList.remove('active');
+    document.getElementById('tradeBtnMain').className = 'track-btn';
+    document.getElementById('opsBtnMain').className = 'track-btn';
+    document.getElementById('track-' + track).classList.add('active');
+    if (track === 'trade') {
+      document.getElementById('tradeBtnMain').classList.add('active-trade');
+    } else {
+      document.getElementById('opsBtnMain').classList.add('active-ops');
+    }
+  }
+
+  // Phase switching
+  function switchPhase(track, idx) {
+    const counts = { trade: 4, ops: 4 };
+    const activeClass = track === 'trade' ? 'active-trade' : 'active-ops';
+    const tabs = document.getElementById(track + 'PhaseTabs').querySelectorAll('.phase-tab');
+    tabs.forEach((t, i) => {
+      t.classList.remove('active-trade', 'active-ops');
+      if (i === idx) t.classList.add(activeClass);
+    });
+    for (let i = 0; i < counts[track]; i++) {
+      const el = document.getElementById(track + '-phase-' + i);
+      if (el) el.classList.remove('active');
+    }
+    const target = document.getElementById(track + '-phase-' + idx);
+    if (target) target.classList.add('active');
+  }
+
+  // Install tabs
+  function switchInstall(idx) {
+    document.querySelectorAll('.install-tab').forEach((t, i) => {
+      t.classList.toggle('active', i === idx);
+    });
+    document.querySelectorAll('.install-panel').forEach((p, i) => {
+      p.classList.toggle('active', i === idx);
+    });
+  }
+
+  // Modal
+  function openModal(id) { document.getElementById(id).classList.add('open'); }
+  function closeModal(id) { document.getElementById(id).classList.remove('open'); }
+
+  // Mobile nav
+  function openMobileNav() { document.getElementById('mobileNav').classList.add('open'); }
+  function closeMobileNav() { document.getElementById('mobileNav').classList.remove('open'); }
+
+  // Copy WeChat
+  function copyWx(btn, id) {
+    navigator.clipboard.writeText(id).then(() => {
+      btn.textContent = '복사됨 ✓';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = '이메일 복사'; btn.classList.remove('copied'); }, 2000);
+    }).catch(() => {
+      btn.textContent = '복사됨 ✓';
+      setTimeout(() => { btn.textContent = '이메일 복사'; }, 2000);
+    });
+  }
+
+  // Copy URL
+  function copyUrl() {
+    navigator.clipboard.writeText('https://it-kol.github.io/trade-kr/').then(() => {
+      alert('링크가 복사되었습니다!');
+    });
+  }
+
+  function shareToKakao() { copyUrl(); alert('링크가 복사되었습니다. 카카오톡에 붙여넣기 하세요.'); }
+  function shareToNaver() { window.open('https://share.naver.com/web/shareView?url=' + encodeURIComponent('https://it-kol.github.io/trade-kr/') + '&title=' + encodeURIComponent('이머시브 번역 × 해외영업/해외마케팅 KOL 협업 참고 자료')); }
+  function shareToTwitter() { window.open('https://twitter.com/intent/tweet?url=' + encodeURIComponent('https://it-kol.github.io/trade-kr/') + '&text=' + encodeURIComponent('이머시브 번역 × 해외영업/해외마케팅 KOL 협업 참고 자료')); }
+
+  // Demo tabs
+  function switchDemo(idx) {
+    document.querySelectorAll('.demo-tab').forEach((t, i) => {
+      t.classList.remove('active', 'active-trade');
+      if (i === idx) t.classList.add(idx === 0 ? 'active-trade' : 'active');
+    });
+    document.querySelectorAll('.demo-panel').forEach((p, i) => {
+      p.classList.toggle('active', i === idx);
+    });
+  }
+
+  // Copy enterprise WeChat
+  function copyEnterpriseWx(btn) {
+    navigator.clipboard.writeText('yara@babelnovel.com').then(() => {
+      btn.textContent = '복사됨 ✓';
+      btn.style.opacity = '0.7';
+      setTimeout(() => { btn.textContent = '이메일 복사'; btn.style.opacity = ''; }, 2000);
+    }).catch(() => {
+      btn.textContent = '복사됨 ✓';
+      setTimeout(() => { btn.textContent = '이메일 복사'; }, 2000);
+    });
+  }
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
